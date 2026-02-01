@@ -44,7 +44,7 @@ export default function ProfessionalHeader() {
                         Plano Free
                     </Badge>
                     <Button variant="ghost" size="sm" asChild>
-                        <Link href="#">
+                        <Link href="/dashboard/upgrade">
                             <Zap className="mr-1.5 h-4 w-4" />
                             Atualizar plano
                         </Link>
