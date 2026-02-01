@@ -59,9 +59,6 @@ export default function Header() {
           <Button variant="ghost" asChild>
             <Link href="/login">Entrar</Link>
           </Button>
-          <Button asChild>
-            <Link href="/signup">Começar</Link>
-          </Button>
         </div>
 
         <div className="md:hidden">
@@ -85,9 +82,6 @@ export default function Header() {
                 <div className="mt-auto flex flex-col gap-2 border-t pt-6">
                    <Button variant="ghost" className="w-full justify-start text-lg" asChild>
                     <Link href="/login">Entrar</Link>
-                  </Button>
-                   <Button className="w-full text-lg" asChild>
-                    <Link href="/signup">Começar</Link>
                   </Button>
                 </div>
               </div>

@@ -79,11 +79,6 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t pt-8 flex flex-col sm:flex-row items-center justify-between">
           <p className="text-muted-foreground">&copy; {new Date().getFullYear()} Collabora Inc. Todos os direitos reservados.</p>
-          <div className="flex items-center space-x-4 mt-4 sm:mt-0">
-             <Button asChild>
-                <Link href="/signup">Comece Agora</Link>
-             </Button>
-          </div>
         </div>
       </div>
     </footer>
