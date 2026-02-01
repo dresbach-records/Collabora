@@ -93,7 +93,7 @@ export default function TechLabsLoginPage() {
             </div>
 
             <h1 className="text-2xl font-bold text-gray-800 font-headline">Bem-vindo(a) de volta.</h1>
-            <p className="text-gray-500 mt-2 mb-6">Faça login na sua conta da Tech Labs.</p>
+            <p className="text-gray-500 mt-2 mb-8">Faça login na sua conta da Tech Labs.</p>
 
             <form className="space-y-4" onSubmit={handleLogin}>
               <div className="relative">
@@ -109,41 +109,13 @@ export default function TechLabsLoginPage() {
                   Esqueceu sua senha?
                 </Link>
               </div>
-              <Button type="submit" className="w-full bg-[#F97316] hover:bg-[#F97316]/90 text-white font-semibold" size="lg" disabled={isLoading}>
+              <Button type="submit" className="w-full bg-[#F97316] hover:bg-[#F97316]/90 text-white font-semibold mt-6" size="lg" disabled={isLoading}>
                 {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 {isLoading ? 'Entrando...' : 'Entrar'}
               </Button>
-              <div className="text-center pt-2">
-                 <p className="text-sm text-gray-600">
-                    Novo por aqui?{' '}
-                    <Link href="#" className="font-semibold text-[#F97316] hover:underline">
-                        Criar uma conta
-                    </Link>
-                 </p>
-              </div>
             </form>
-
-            <div className="relative my-6">
-              <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t border-gray-300" />
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-white px-2 text-gray-500">ou</span>
-              </div>
-            </div>
-
-            <div className="space-y-3">
-               <Button variant="outline" className="w-full justify-center gap-2.5 text-gray-700 font-medium" size="lg">
-                    <GoogleIcon />
-                    Entrar com Google
-                </Button>
-                <Button variant="outline" className="w-full justify-center gap-2.5 text-gray-700 font-medium" size="lg">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20.4 0H3.6C1.612 0 0 1.612 0 3.6v16.8C0 22.388 1.612 24 3.6 24h16.8c1.988 0 3.6-1.612 3.6-3.6V3.6C24 1.612 22.388 0 20.4 0zM8 19H5V8h3V19zM6.5 6.7C5.506 6.7 4.7 5.894 4.7 4.9S5.306 3.1 6.3 3.1s1.8 0.806 1.8 1.8S7.494 6.7 6.5 6.7zM20 19h-3v-5.5c0-1.3-.4-2.2-1.6-2.2c-.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8V19h-3V8h3v1.3c.4-.6 1.1-1.3 2.7-1.3 2 0 3.3 1.3 3.3 4.2V19z"></path></svg>
-                    Entrar com Linkedin
-                </Button>
-            </div>
             
-            <p className="text-xs text-gray-500 text-center mt-8">
+            <p className="text-xs text-gray-500 text-center mt-12">
               © 2024 Tech Labs — Todos os direitos reservados
             </p>
           </div>
