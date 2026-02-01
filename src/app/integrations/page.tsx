@@ -24,7 +24,10 @@ import {
   MessageSquare,
   KeyRound,
   ShieldCheck,
-  Webhook
+  Webhook,
+  Palette,
+  QrCode,
+  Barcode
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -69,8 +72,9 @@ const integrationCategories = [
     integrations: [
       { name: "Behance", icon: <Briefcase /> },
       { name: "Dribbble", icon: <Dribbble /> },
-      { name: "Adobe", icon: <SvgIcon path="M13.97 2.2a.66.66 0 0 0-.25-.2l-.09-.04a.63.63 0 0 0-.3-.06H3.3l9.46 22.18a.67.67 0 0 0 .63.42.66.66 0 0 0 .64-.5L20.87 2.2zM12.55 12h-5L11.7 3.5l4.13 8.5z" /> },
+      { name: "Adobe Portfolio", icon: <SvgIcon path="M13.97 2.2a.66.66 0 0 0-.25-.2l-.09-.04a.63.63 0 0 0-.3-.06H3.3l9.46 22.18a.67.67 0 0 0 .63.42.66.66 0 0 0 .64-.5L20.87 2.2zM12.55 12h-5L11.7 3.5l4.13 8.5z" /> },
       { name: "Figma", icon: <Figma /> },
+      { name: "Canva", icon: <Palette /> },
     ],
   },
   {
@@ -110,6 +114,19 @@ const integrationCategories = [
       { name: "WhatsApp", icon: <SvgIcon path="M19.05 4.94A10 10 0 0 0 12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.44 1.28 4.93L2 22l5.07-1.28c1.49.81 3.16 1.28 4.93 1.28 5.52 0 10-4.48 10-10a10 10 0 0 0-2.95-7.06zM12 20.25c-1.57 0-3.04-.4-4.3-1.09L5.3 20l1.1-2.4c-.8-1.3-1.2-2.8-1.2-4.4 0-4.5 3.7-8.2 8.2-8.2s8.2 3.7 8.2 8.2-3.7 8.2-8.2 8.2zM16.5 13.5c-.2 0-.4-.1-.6-.2l-2.4-1.2c-.2-.1-.3-.1-.5.1s-.6.7-.7.9c-.1.1-.3.2-.5.1s-1-.3-1.8-1c-.8-.7-1.3-1.6-1.5-1.9-.1-.3 0-.5.1-.6s.3-.3.4-.4c.1-.1.2-.3.3-.4.1-.1.1-.3 0-.4L9.1 8c-.1-.4-.2-.3-.4-.3h-.3c-.2 0-.4.1-.6.3s-.7.7-.7 1.7c0 1 .7 2 1.4 2.8.7.8 1.6 1.5 2.8 2 1.2.5 2.2.8 3 .8h.3c.2 0 .4-.1.6-.3s.7-.7.8-1.4c.1-1-.1-1.3-.2-1.4s-.3-.2-.5-.2z" /> },
       { name: "Slack", icon: <Slack /> },
       { name: "Discord", icon: <SvgIcon path="M20.3 3.7C18.9 2.7 17.3 2 15.5 1.7c-.5-.1-1 .3-1.1.8s.3 1 .8 1.1c1.5.3 2.9.9 4.1 1.7.2.1.4.1.6 0 .2-.1.3-.3.3-.5s-.1-.4-.3-.5zM3.7 3.7c-.2-.1-.4-.1-.6 0-.2.1-.3.3-.3.5s.1.4.3.5c1.2-.8 2.6-1.4 4.1-1.7.5-.1 1.1-.6 1.1-1.1s-.6-1-.1-.8C5.7 2 4.1 2.7 2.7 3.7c-1.4 1-2.5 2.3-3.1 3.9C-.9 8.7-.7 10 .2 11c.8 1 2 1.5 3.3 1.3.3 0 .6-.1.8-.2.5.8 1.2 1.5 2 2 .3.2.7.3 1 .3s.7-.1 1-.3c2-1.2 3.5-3.1 4-5.3.3-1.2 0-2.5-.8-3.5zM12 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm8.3-2.7c-.5-1.6-1.7-2.9-3.1-3.9-1.4-1-3-1.7-4.7-2-.5-.1-1 .3-1.1.8s.3 1 .8 1.1c1.8.3 3.4 1 4.7 2 .2.1.4.1.6 0 .2-.1.3-.3.3-.5s-.1-.4-.3-.5zm-4.1-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/> },
+      { name: "Zoom", icon: <Video /> },
+      { name: "Google Meet", icon: <Video /> },
+    ],
+  },
+  {
+    title: "Pagamentos & Financeiro",
+    description: "Para upgrade de planos e gestão de assinaturas.",
+    icon: <CreditCard />,
+    integrations: [
+      { name: "Asaas", icon: <CreditCard /> },
+      { name: "Pix", icon: <QrCode /> },
+      { name: "Cartão de Crédito", icon: <CreditCard /> },
+      { name: "Boleto", icon: <Barcode /> },
     ],
   },
   {
