@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, Users, FolderKanban, Lambda, MoreHorizontal } from "lucide-react";
+import { Briefcase, Users, FolderKanban, TrendingUp, MoreHorizontal } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, BarChart, Bar } from 'recharts';
 import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -126,7 +126,7 @@ export default function TechLabsDashboardPage() {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-base font-semibold flex items-center gap-2 text-gray-600">
-              <Lambda className="w-5 h-5 text-orange-500" />
+              <TrendingUp className="w-5 h-5 text-orange-500" />
               <span>Enggamento</span>
             </CardTitle>
           </CardHeader>
