@@ -69,27 +69,25 @@ export default function TechLabsDashboardPage() {
               <span>Empresas</span>
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-4">
-              <div>
-                <p className="text-sm text-muted-foreground">Total</p>
-                <p className="text-xl font-bold">986</p>
+          <CardContent className="grid grid-cols-2 gap-x-4 gap-y-2">
+              <div className="space-y-1">
+                <p className="text-xs text-muted-foreground">Total</p>
+                <p className="text-2xl font-bold">986</p>
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Ativas</p>
-                <p className="text-xl font-bold">813</p>
+              <div className="space-y-1">
+                <p className="text-xs text-muted-foreground">Ativas</p>
+                <p className="text-2xl font-bold">813</p>
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Recentes</p>
-                <p className="text-xl font-bold">453</p>
+              <div className="space-y-1">
+                <p className="text-xs text-muted-foreground">Recentes</p>
+                <p className="text-2xl font-bold">453</p>
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Pendentes</p>
-                <p className="text-xl font-bold">112</p>
+              <div className="space-y-1">
+                <p className="text-xs text-muted-foreground">Pendentes</p>
+                <p className="text-2xl font-bold">112</p>
               </div>
-            </div>
           </CardContent>
-          <CardFooter>
+          <CardFooter className="pt-4">
              <Button className="w-full bg-[#F97316] hover:bg-[#F97316]/90 text-white text-sm h-9">Gerenciar &gt;</Button>
           </CardFooter>
         </Card>
@@ -100,27 +98,25 @@ export default function TechLabsDashboardPage() {
               <span>Profissionais</span>
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-4">
-              <div>
-                <p className="text-sm text-muted-foreground">Registrados</p>
-                <p className="text-xl font-bold">1,245</p>
+          <CardContent className="grid grid-cols-2 gap-x-4 gap-y-2">
+              <div className="space-y-1">
+                <p className="text-xs text-muted-foreground">Registrados</p>
+                <p className="text-2xl font-bold">1,245</p>
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Conectados</p>
-                <p className="text-xl font-bold">326</p>
+              <div className="space-y-1">
+                <p className="text-xs text-muted-foreground">Conectados</p>
+                <p className="text-2xl font-bold">326</p>
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Incompletos</p>
-                <p className="text-xl font-bold">326</p>
+              <div className="space-y-1">
+                <p className="text-xs text-muted-foreground">Incompletos</p>
+                <p className="text-2xl font-bold">326</p>
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Candidatos</p>
-                <p className="text-xl font-bold">812</p>
+              <div className="space-y-1">
+                <p className="text-xs text-muted-foreground">Candidatos</p>
+                <p className="text-2xl font-bold">812</p>
               </div>
-            </div>
           </CardContent>
-          <CardFooter>
+          <CardFooter className="pt-4">
              <Button className="w-full bg-[#F97316] hover:bg-[#F97316]/90 text-white text-sm h-9">Gerenciar &gt;</Button>
           </CardFooter>
         </Card>
@@ -131,27 +127,25 @@ export default function TechLabsDashboardPage() {
               <span>Projetos</span>
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-4">
-              <div>
-                <p className="text-sm text-muted-foreground">Ativos</p>
-                <p className="text-xl font-bold">1,012</p>
+          <CardContent className="grid grid-cols-2 gap-x-4 gap-y-2">
+              <div className="space-y-1">
+                <p className="text-xs text-muted-foreground">Ativos</p>
+                <p className="text-2xl font-bold">1,012</p>
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Concluídos</p>
-                <p className="text-xl font-bold">2,396</p>
+              <div className="space-y-1">
+                <p className="text-xs text-muted-foreground">Concluídos</p>
+                <p className="text-2xl font-bold">2,396</p>
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Em análise</p>
-                <p className="text-xl font-bold">2,339</p>
+              <div className="space-y-1">
+                <p className="text-xs text-muted-foreground">Em análise</p>
+                <p className="text-2xl font-bold">2,339</p>
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Pendentes</p>
-                <p className="text-xl font-bold">126</p>
+              <div className="space-y-1">
+                <p className="text-xs text-muted-foreground">Pendentes</p>
+                <p className="text-2xl font-bold">126</p>
               </div>
-            </div>
           </CardContent>
-          <CardFooter>
+          <CardFooter className="pt-4">
              <Button className="w-full bg-[#F97316] hover:bg-[#F97316]/90 text-white text-sm h-9">Gerenciar &gt;</Button>
           </CardFooter>
         </Card>
@@ -164,9 +158,9 @@ export default function TechLabsDashboardPage() {
           </CardHeader>
           <CardContent className="h-[124px] pt-2 flex flex-col justify-between">
             <div className="space-y-1 text-sm">
-                <p>Candidaturas</p>
-                <p><span className="font-bold">283</span> Convites</p>
-                <p>Convites Aceitos</p>
+                <p><span className="font-bold">283</span> Candidaturas</p>
+                <p><span className="font-bold">1,205</span> Convites</p>
+                <p><span className="font-bold">89%</span> Convites Aceitos</p>
                 <p><span className="font-bold">9,455</span> Mensagens</p>
             </div>
             <div className="h-[30px] -mx-6 -mb-5">
