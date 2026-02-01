@@ -1,3 +1,64 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-1",
+      "description": "Abstract team collaboration graphic",
+      "imageUrl": "https://images.unsplash.com/photo-1569443161097-73515d394f06?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhYnN0cmFjdCUyMGNvbGxhYm9yYXRpb258ZW58MHx8fHwxNzY5OTUzNDkyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract collaboration"
+    },
+    {
+      "id": "profile-avatar-1",
+      "description": "Profile picture of a female designer",
+      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2OTkyNjkzMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "profile-avatar-2",
+      "description": "Profile picture of a male developer",
+      "imageUrl": "https://images.unsplash.com/photo-1583195763986-0231686dcd43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3Njk4NjMwOTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "profile-avatar-3",
+      "description": "Profile picture of a video editor",
+      "imageUrl": "https://images.unsplash.com/photo-1578638341562-d20558fbbcb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVyc29uJTIwY3JlYXRpdmV8ZW58MHx8fHwxNzY5OTMyNzk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person creative"
+    },
+    {
+      "id": "company-logo-1",
+      "description": "Logo for a tech startup",
+      "imageUrl": "https://images.unsplash.com/photo-1760037028517-e5cc6e3ebd3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGxvZ298ZW58MHx8fHwxNzY5OTQzNDM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract logo"
+    },
+    {
+      "id": "company-logo-2",
+      "description": "Logo for a design agency",
+      "imageUrl": "https://images.unsplash.com/photo-1691737832932-df0a14c7b278?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Z2VvbWV0cmljJTIwbG9nb3xlbnwwfHx8fDE3Njk5MzY3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "geometric logo"
+    },
+    {
+      "id": "company-logo-3",
+      "description": "Logo for a media company",
+      "imageUrl": "https://images.unsplash.com/photo-1645782068569-2d889782ee61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtaW5pbWFsaXN0JTIwbG9nb3xlbnwwfHx8fDE3Njk5MjM4Njh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "minimalist logo"
+    },
+    {
+      "id": "project-thumb-1",
+      "description": "Thumbnail for a web development project",
+      "imageUrl": "https://images.unsplash.com/photo-1566396223585-c8fbf7fa6b6d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWJzaXRlJTIwc2NyZWVuc2hvdHxlbnwwfHx8fDE3Njk4NTgyMDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "website screenshot"
+    },
+    {
+      "id": "project-thumb-2",
+      "description": "Thumbnail for a branding design project",
+      "imageUrl": "https://images.unsplash.com/photo-1696483797754-45c7aa913724?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBtb29kYm9hcmR8ZW58MHx8fHwxNzY5OTUzNDkyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "design moodboard"
+    },
+    {
+      "id": "project-thumb-3",
+      "description": "Thumbnail for a mobile app project",
+      "imageUrl": "https://images.unsplash.com/photo-1654764450232-d0724be6dcd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhcHAlMjBpbnRlcmZhY2V8ZW58MHx8fHwxNzY5ODgxMjU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "app interface"
+    }
+  ]
 }

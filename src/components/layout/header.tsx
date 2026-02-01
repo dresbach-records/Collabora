@@ -1,0 +1,102 @@
+'use client';
+
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Menu, Shapes } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
+
+const Logo = () => (
+  <Link href="/" className="flex items-center gap-2 text-xl font-semibold group">
+    <Shapes className="h-6 w-6 text-primary transition-colors group-hover:text-accent" />
+    <span className="font-headline text-foreground">Collabora</span>
+  </Link>
+);
+
+const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+  const pathname = usePathname();
+  const isActive = pathname === href;
+
+  return (
+    <Link
+      href={href}
+      className={cn(
+        'text-base font-medium text-muted-foreground transition-colors hover:text-primary',
+        isActive && 'text-primary'
+      )}
+    >
+      {children}
+    </Link>
+  );
+};
+
+export default function Header() {
+  const navItems = [
+    { href: '/projects', label: 'Projects' },
+    { href: '/talent', label: 'Find Talent' },
+  ];
+
+  return (
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+        <div className="flex items-center gap-6">
+          <Logo />
+          <nav className="hidden items-center gap-6 md:flex">
+            {navItems.map((item) => (
+              <NavLink key={item.href} href={item.href}>
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
+
+        <div className="hidden items-center gap-2 md:flex">
+          <Button variant="ghost" asChild>
+            <Link href="/login">Log In</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/signup">Sign Up</Link>
+          </Button>
+          <Button asChild>
+            <Link href="/dashboard/projects/new">Post a Project</Link>
+          </Button>
+        </div>
+
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle Menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right">
+              <div className="flex flex-col gap-6 pt-8">
+                <Logo />
+                <nav className="flex flex-col gap-4">
+                  {navItems.map((item) => (
+                    <NavLink key={item.href} href={item.href}>
+                      {item.label}
+                    </NavLink>
+                  ))}
+                </nav>
+                <div className="mt-auto flex flex-col gap-2 border-t pt-6">
+                  <Button variant="ghost" asChild>
+                    <Link href="/login">Log In</Link>
+                  </Button>
+                  <Button variant="outline" asChild>
+                    <Link href="/signup">Sign Up</Link>
+                  </Button>
+                  <Button asChild>
+                    <Link href="/dashboard/projects/new">Post a Project</Link>
+                  </Button>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+    </header>
+  );
+}
