@@ -10,7 +10,7 @@ import Image from 'next/image';
 
 const Logo = () => (
   <Link href="/" className="flex items-center gap-2 text-xl font-semibold group">
-    <Image src="/logo.png" alt="Collabora logo" width={120} height={32} />
+    <Image src="/logo.png" alt="Collabora logo" width={120} height={32} className="invert" />
   </Link>
 );
 

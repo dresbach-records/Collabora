@@ -33,7 +33,7 @@ export default function DashboardLayout({
         <SidebarHeader>
           <div className="flex items-center gap-2">
             <Link href="/dashboard">
-              <Image src="/logo.png" alt="Collabora logo" width={120} height={32} />
+              <Image src="/logo.png" alt="Collabora logo" width={120} height={32} className="invert" />
             </Link>
           </div>
         </SidebarHeader>
