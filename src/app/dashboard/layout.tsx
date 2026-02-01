@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
-const professionalUser = users.find(u => u.role === 'ROLE_PROFESSIONAL');
+const professionalUser = users.find(u => u.role === 'PROFESSIONAL');
 const userAvatar = professionalUser ? PlaceHolderImages.find(p => p.id === professionalUser.avatarUrlId) : null;
 
 export default function DashboardLayout({

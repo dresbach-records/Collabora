@@ -7,10 +7,10 @@ Operado por Tech Labs (Admin Master)
 
 Collabora é uma plataforma digital de intermediação de serviços que conecta:
 
-*   **Profissionais digitais** (freelancers, criadores, desenvolvedores)
-*   **Empresas clientes** (startups, agências, estúdios)
+*   Profissionais digitais (freelancers, criadores, desenvolvedores)
+*   Empresas clientes (startups, agências, estúdios)
 
-Sob governança da **Tech Labs**, empresa dona e operadora do sistema.
+Sob governança da Tech Labs, empresa dona e operadora do sistema.
 
 A plataforma foi projetada para ser:
 
@@ -36,11 +36,9 @@ O sistema decide qual dashboard carregar com base no papel do usuário.
 
 🧩 **Papéis do Sistema (Roles)**
 
-| Role              | Descrição                                 |
-| ----------------- | ----------------------------------------- |
-| `ROLE_SUPER_ADMIN`  | Tech Labs (dona da plataforma)            |
-| `ROLE_COMPANY`      | Empresa cliente (contrata serviços)       |
-| `ROLE_PROFESSIONAL` | Profissional / Freelancer (oferece serviços) |
+`SUPER_ADMIN`     → Tech Labs (dona da plataforma)
+`COMPANY`         → Empresa cliente (contrata serviços)
+`PROFESSIONAL`    → Profissional / Freelancer (oferece serviços)
 
 ---
 
@@ -64,7 +62,7 @@ Após autenticação:
 | **Tech Labs (Admin)** | `/admin`         | Painel de controle do sistema       |
 | **Empresa Cliente**   | `/company`       | Gestão de projetos e talentos       |
 | **Profissional**    | `/dashboard`     | Busca e oferta de serviços          |
-| **Perfil público**  | `/profile/{username}` | Portfólio público do profissional |
+| **Perfil público**  | `/@username`     | Portfólio do profissional           |
 
 ---
 
@@ -118,7 +116,7 @@ Após autenticação:
 *   Conversar com empresas
 *   Gerenciar plano
 
-**Perfil público (`/profile/{username}`)**: Indexável, compartilhável e visível para empresas.
+**Perfil público (`/@username`)**: Indexável, compartilhável e visível para empresas.
 
 ---
 
@@ -147,9 +145,9 @@ Após autenticação:
 **Exemplo de lógica de acesso**:
 
 ```javascript
-if (user.role === 'ROLE_SUPER_ADMIN') redirect('/admin');
-if (user.role === 'ROLE_COMPANY') redirect('/company');
-if (user.role === 'ROLE_PROFESSIONAL') redirect('/dashboard');
+if (user.role === 'SUPER_ADMIN') redirect('/admin');
+if (user.role === 'COMPANY') redirect('/company');
+if (user.role === 'PROFESSIONAL') redirect('/dashboard');
 ```
 
 ---
@@ -191,4 +189,3 @@ A Collabora é um marketplace profissional, com:
 *   Base sólida para crescimento
 
 Este README representa a fonte oficial de verdade do sistema.
-# Collabora

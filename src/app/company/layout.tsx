@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
-const companyUser = users.find(u => u.role === 'ROLE_COMPANY');
+const companyUser = users.find(u => u.role === 'COMPANY');
 const userAvatar = companyUser ? PlaceHolderImages.find(p => p.id === companyUser.avatarUrlId) : null;
 
 export default function CompanyLayout({
