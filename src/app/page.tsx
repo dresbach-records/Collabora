@@ -216,7 +216,7 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <Link href="/dashboard/projects/new" style={{ writingMode: 'vertical-rl' }} className="fixed top-1/2 -translate-y-1/2 right-0 bg-primary text-primary-foreground font-bold p-4 py-6 rounded-l-md z-40 transform transition-transform hover:bg-primary/90 text-center tracking-widest uppercase">
+      <Link href="/dashboard/projects/new" style={{ writingMode: 'vertical-rl' }} className="hidden md:inline-block fixed top-1/2 -translate-y-1/2 right-0 bg-primary text-primary-foreground font-bold p-4 py-6 rounded-l-md z-40 transform transition-transform hover:bg-primary/90 text-center tracking-widest uppercase">
           Publicar um Projeto
       </Link>
     </>

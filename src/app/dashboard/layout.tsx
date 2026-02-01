@@ -107,11 +107,11 @@ export default function DashboardLayout({
         </SidebarFooter>
       </Sidebar>
       <SidebarInset className="bg-secondary">
-        <header className="flex h-14 items-center gap-4 border-b bg-background px-6">
+        <header className="flex h-14 items-center gap-4 border-b bg-background px-4 sm:px-6">
           <SidebarTrigger className="md:hidden" />
           <h2 className="flex-1 text-lg font-semibold">Painel</h2>
         </header>
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           {children}
         </div>
       </SidebarInset>
