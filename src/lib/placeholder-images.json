@@ -83,6 +83,12 @@
       "description": "A diverse team collaborating in a modern office",
       "imageUrl": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3MjE4MzYyODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "team collaboration"
+    },
+    {
+      "id": "login-background",
+      "description": "Soft cloudy sky background for login page",
+      "imageUrl": "https://images.unsplash.com/photo-1517495306984-f84210f9daa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzb2Z0JTIwc2t5fGVufDB8fHx8MTcyMTg0NjQzMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "soft sky"
     }
   ]
 }

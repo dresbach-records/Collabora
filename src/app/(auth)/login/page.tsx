@@ -1,60 +1,47 @@
 'use client';
 
-import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Github, Linkedin } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 
 export default function LoginPage() {
-  const [role, setRole] = useState("professional");
-
-  const title = role === 'professional' ? 'Login do Profissional' : 'Login da Empresa';
-  const description = 'Faça login na sua conta Collabora para continuar.';
-
   return (
     <Card className="w-full max-w-md shadow-xl">
-      <CardHeader className="text-center">
-        <CardTitle className="text-3xl">{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+      <CardHeader className="items-center text-center space-y-4">
+        <Link href="/" className="flex items-center gap-2 group">
+          <Image src="/iconecolabora.ico" alt="Collabora icon" width={32} height={32} />
+          <span className="text-3xl font-bold text-foreground">Collabora</span>
+        </Link>
+        <div className="space-y-1">
+          <CardTitle className="text-2xl">Bem-vindo de volta</CardTitle>
+          <CardDescription>Faça login na sua conta Collabora para continuar.</CardDescription>
+        </div>
       </CardHeader>
       <CardContent className="space-y-6">
-        <RadioGroup value={role} onValueChange={setRole} className="grid grid-cols-2 gap-4">
-          <div>
-            <RadioGroupItem value="professional" id="professional" className="peer sr-only" />
-            <Label
-              htmlFor="professional"
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
-            >
-              Sou um Profissional
-            </Label>
-          </div>
-          <div>
-            <RadioGroupItem value="company" id="company" className="peer sr-only" />
-            <Label
-              htmlFor="company"
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
-            >
-              Sou uma Empresa
-            </Label>
-          </div>
-        </RadioGroup>
-
         <div className="space-y-4">
             <div className="space-y-2">
                 <Label htmlFor="email">E-mail</Label>
-                <Input id="email" type="email" placeholder={role === 'professional' ? "seu@email.com" : "contato@empresa.com"} required />
+                <Input id="email" type="email" placeholder="m@example.com" required />
             </div>
             <div className="space-y-2">
-                <Label htmlFor="password">Senha</Label>
+                <div className="flex items-center justify-between">
+                    <Label htmlFor="password">Senha</Label>
+                    <Link
+                        href="#"
+                        className="text-sm font-medium text-primary hover:underline"
+                    >
+                        Esqueceu a senha?
+                    </Link>
+                </div>
                 <Input id="password" type="password" required />
             </div>
         </div>
 
-        <Button className="w-full">Entrar</Button>
+        <Button className="w-full" size="lg">Entrar</Button>
 
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
@@ -68,12 +55,12 @@ export default function LoginPage() {
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <Button variant="outline">
-            <Github className="mr-2 h-4 w-4" />
+          <Button variant="outline" className="h-12">
+            <Github className="mr-2 h-5 w-5" />
             GitHub
           </Button>
-          <Button variant="outline">
-            <Linkedin className="mr-2 h-4 w-4" />
+          <Button variant="outline" className="h-12">
+            <Linkedin className="mr-2 h-5 w-5" />
             LinkedIn
           </Button>
         </div>
