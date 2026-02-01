@@ -170,7 +170,7 @@ export default function CompanySidebar() {
                               <SidebarMenuSubItem><SidebarMenuSubButton href="#">Projeto</SidebarMenuSubButton></SidebarMenuSubItem>
                               <SidebarMenuSubItem><SidebarMenuSubButton href="#">Profissional</SidebarMenuSubButton></SidebarMenuSubItem>
                               <SidebarMenuSubItem><SidebarMenuSubButton href="#">Data</SidebarMenuSubButton></SidebarMenuSubItem>
-                              <SidebarMenuSubItem><SidebarMenuSubButton href="#">Status</SidebarMenuSubButton></SidebarMenuSubButton>
+                              <SidebarMenuSubItem><SidebarMenuSubButton href="#">Status</SidebarMenuSubButton></SidebarMenuSubItem>
                             </SidebarMenuSub>
                           </CollapsibleContent>
                         </Collapsible>
@@ -303,11 +303,11 @@ export default function CompanySidebar() {
                   </CollapsibleTrigger>
                   <CollapsibleContent>
                     <SidebarMenuSub>
-                      <SidebarMenuSubItem><SidebarMenuSubButton href="#">Plano atual</SidebarMenuSubButton></SidebarMenuSubItem>
+                      <SidebarMenuSubItem><SidebarMenuSubButton href="/company/upgrade">Plano atual</SidebarMenuSubButton></SidebarMenuSubItem>
                       <SidebarMenuSubItem><SidebarMenuSubButton href="#">Limites do plano</SidebarMenuSubButton></SidebarMenuSubItem>
                       <SidebarMenuSubItem><SidebarMenuSubButton href="#">Comparar planos</SidebarMenuSubButton></SidebarMenuSubItem>
                       <SidebarMenuSubItem><SidebarMenuSubButton href="#">Histórico de pagamentos</SidebarMenuSubButton></SidebarMenuSubItem>
-                      <SidebarMenuSubItem><SidebarMenuSubButton href="#">Atualizar plano</SidebarMenuSubButton></SidebarMenuSubItem>
+                      <SidebarMenuSubItem><SidebarMenuSubButton href="/company/upgrade">Atualizar plano</SidebarMenuSubButton></SidebarMenuSubItem>
                     </SidebarMenuSub>
                   </CollapsibleContent>
                 </Collapsible>

@@ -442,7 +442,7 @@ export default function ProfessionalSidebar() {
                   </CollapsibleTrigger>
                   <CollapsibleContent>
                     <SidebarMenuSub>
-                      <SidebarMenuSubItem><SidebarMenuSubButton href="#">Plano atual</SidebarMenuSubButton></SidebarMenuSubItem>
+                      <SidebarMenuSubItem><SidebarMenuSubButton href="/dashboard/upgrade">Plano atual</SidebarMenuSubButton></SidebarMenuSubItem>
                       <SidebarMenuSubItem><SidebarMenuSubButton href="#">Limites do plano</SidebarMenuSubButton></SidebarMenuSubItem>
                       <SidebarMenuSubItem><SidebarMenuSubButton href="#">Comparar planos</SidebarMenuSubButton></SidebarMenuSubItem>
                       <SidebarMenuSubItem><SidebarMenuSubButton href="#">Histórico de upgrades</SidebarMenuSubButton></SidebarMenuSubItem>
