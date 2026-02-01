@@ -66,19 +66,19 @@ export default function TechLabsDashboardPage() {
           <CardHeader className="pb-2">
             <CardTitle className="text-base font-semibold flex items-center gap-2 text-gray-600">
               <Briefcase className="w-5 h-5 text-orange-500" />
-              <span>Emprsies</span>
+              <span>Empresas</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                <div className="flex items-baseline gap-2"><span className="text-2xl font-bold">986</span><span className="text-sm text-muted-foreground">Ativas</span></div>
-                <div className="flex items-baseline gap-2"><span className="text-2xl font-bold">813</span><span className="text-sm text-muted-foreground">Recents</span></div>
-                <div className="flex items-baseline gap-2"><span className="text-2xl font-bold">453</span><span className="text-sm text-muted-foreground">Ativas</span></div>
-                <div className="flex items-baseline gap-2"><span className="text-2xl font-bold">112</span><span className="text-sm text-muted-foreground">pendentes</span></div>
+                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">986</span><span className="text-sm text-muted-foreground">Ativas</span></div>
+                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">813</span><span className="text-sm text-muted-foreground">Recentes</span></div>
+                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">453</span><span className="text-sm text-muted-foreground">Ativas</span></div>
+                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">112</span><span className="text-sm text-muted-foreground">Pendentes</span></div>
             </div>
           </CardContent>
           <CardFooter>
-             <Button className="w-full bg-[#F97316] hover:bg-[#F97316]/90 text-white text-sm h-9">Gerenaiar &gt;</Button>
+             <Button className="w-full bg-[#F97316] hover:bg-[#F97316]/90 text-white text-sm h-9">Gerenciar &gt;</Button>
           </CardFooter>
         </Card>
         <Card>
@@ -90,40 +90,40 @@ export default function TechLabsDashboardPage() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                <div className="flex items-baseline gap-2"><span className="text-2xl font-bold">1,245</span><span className="text-sm text-muted-foreground">Registorados</span></div>
-                <div className="flex items-baseline gap-2"><span className="text-2xl font-bold">326</span><span className="text-sm text-muted-foreground">Conectdos</span></div>
-                <div className="flex items-baseline gap-2"><span className="text-2xl font-bold">326</span></div>
-                <div className="flex items-baseline gap-2"><span className="text-2xl font-bold">812</span><span className="text-sm text-muted-foreground">pendicatos</span></div>
+                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">1,245</span><span className="text-sm text-muted-foreground">Registrados</span></div>
+                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">326</span><span className="text-sm text-muted-foreground">Conectados</span></div>
+                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">326</span></div>
+                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">812</span><span className="text-sm text-muted-foreground">Candidatos</span></div>
             </div>
           </CardContent>
           <CardFooter>
-             <Button className="w-full bg-[#F97316] hover:bg-[#F97316]/90 text-white text-sm h-9">Gerenalar &gt;</Button>
+             <Button className="w-full bg-[#F97316] hover:bg-[#F97316]/90 text-white text-sm h-9">Gerenciar &gt;</Button>
           </CardFooter>
         </Card>
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-base font-semibold flex items-center gap-2 text-gray-600">
               <FolderKanban className="w-5 h-5 text-orange-500" />
-              <span>Projects</span>
+              <span>Projetos</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                <div className="flex items-baseline gap-2"><span className="text-2xl font-bold">1,012</span><span className="text-sm text-muted-foreground">Ativos</span></div>
-                <div className="flex items-baseline gap-2"><span className="text-2xl font-bold">2,396</span><span className="text-sm text-muted-foreground">Concluidos</span></div>
-                <div className="flex items-baseline gap-2"><span className="text-2xl font-bold">2,339</span></div>
-                <div className="flex items-baseline gap-2"><span className="text-2xl font-bold">126</span><span className="text-sm text-muted-foreground">pendentes</span></div>
+                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">1,012</span><span className="text-sm text-muted-foreground">Ativos</span></div>
+                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">2,396</span><span className="text-sm text-muted-foreground">Concluídos</span></div>
+                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">2,339</span></div>
+                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">126</span><span className="text-sm text-muted-foreground">Pendentes</span></div>
             </div>
           </CardContent>
           <CardFooter>
-             <Button className="w-full bg-[#F97316] hover:bg-[#F97316]/90 text-white text-sm h-9">Gerenaiar &gt;</Button>
+             <Button className="w-full bg-[#F97316] hover:bg-[#F97316]/90 text-white text-sm h-9">Gerenciar &gt;</Button>
           </CardFooter>
         </Card>
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-base font-semibold flex items-center gap-2 text-gray-600">
               <TrendingUp className="w-5 h-5 text-orange-500" />
-              <span>Enggamento</span>
+              <span>Engajamento</span>
             </CardTitle>
           </CardHeader>
           <CardContent className="h-[124px] pt-2 flex flex-col justify-between">
@@ -131,7 +131,7 @@ export default function TechLabsDashboardPage() {
                 <p>Candidaturas</p>
                 <p><span className="font-bold">283</span> Convites</p>
                 <p>Convites Aceitos</p>
-                <p><span className="font-bold">9,455</span> Mecents</p>
+                <p><span className="font-bold">9,455</span> Mensagens</p>
             </div>
             <div className="h-[30px] -mx-6 -mb-5">
                 <ResponsiveContainer width="100%" height="100%">
@@ -162,9 +162,9 @@ export default function TechLabsDashboardPage() {
                 <CardHeader>
                     <Tabs defaultValue="empresas" className="w-full">
                         <TabsList className="bg-transparent p-0 h-auto">
-                            <TabsTrigger value="empresas" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 px-3 py-2 text-base">Empresies</TabsTrigger>
+                            <TabsTrigger value="empresas" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 px-3 py-2 text-base">Empresas</TabsTrigger>
                             <TabsTrigger value="recentes" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 px-3 py-2 text-base">Recentes</TabsTrigger>
-                            <TabsTrigger value="candidates" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 px-3 py-2 text-base">Candiates</TabsTrigger>
+                            <TabsTrigger value="candidates" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 px-3 py-2 text-base">Candidatos</TabsTrigger>
                             <TabsTrigger value="pendentes" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 px-3 py-2 text-base">Pendentes</TabsTrigger>
                         </TabsList>
                     </Tabs>
@@ -186,7 +186,7 @@ export default function TechLabsDashboardPage() {
                                             <Badge className="bg-green-100 text-green-700 hover:bg-green-100 font-medium">Ativa</Badge>
                                             <p className="text-xs text-muted-foreground">{company.type}</p>
                                         </div>
-                                        <Button size="sm" className="bg-orange-500 text-white h-8 hover:bg-orange-600">Genndar</Button>
+                                        <Button size="sm" className="bg-orange-500 text-white h-8 hover:bg-orange-600">Gerenciar</Button>
                                     </>
                                 )}
                                 {company.status === 'Pendente' && <Button variant="outline" size="sm" className="h-8">Convidar</Button>}
@@ -199,7 +199,7 @@ export default function TechLabsDashboardPage() {
 
             <Card>
                 <CardHeader className="flex flex-row justify-between items-center">
-                    <CardTitle className="text-lg">Gráficos de Attivitado</CardTitle>
+                    <CardTitle className="text-lg">Gráfico de Atividade</CardTitle>
                     <Button variant="ghost" size="icon"><MoreHorizontal className="w-4 h-4"/></Button>
                 </CardHeader>
                 <CardContent className="h-[200px] -ml-6">
@@ -224,13 +224,13 @@ export default function TechLabsDashboardPage() {
         <div className="lg:col-span-3 space-y-6">
             <Card>
                 <CardHeader className="flex flex-row justify-between items-center">
-                    <CardTitle className="text-xl font-bold">Professionals</CardTitle>
+                    <CardTitle className="text-xl font-bold">Profissionais</CardTitle>
                     <Tabs defaultValue="recentes" className="w-auto">
                         <TabsList className="bg-transparent p-0 h-auto">
                             <TabsTrigger value="perfis" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 px-3 py-2 text-base">Perfis</TabsTrigger>
                             <TabsTrigger value="recentes" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 px-3 py-2 text-base">Recentes</TabsTrigger>
-                            <TabsTrigger value="engaamentes" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 px-3 py-2 text-base">Engaarntes</TabsTrigger>
-                             <TabsTrigger value="fenguprugs" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 px-3 py-2 text-base">Fenguprugs</TabsTrigger>
+                            <TabsTrigger value="engaamentes" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 px-3 py-2 text-base">Engajamentos</TabsTrigger>
+                             <TabsTrigger value="fenguprugs" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 px-3 py-2 text-base">Destaques</TabsTrigger>
                         </TabsList>
                     </Tabs>
                 </CardHeader>
@@ -247,15 +247,15 @@ export default function TechLabsDashboardPage() {
                             </div>
                         </div>
                         <div className="flex flex-wrap gap-2 text-sm">
-                            <Button variant="outline" size="sm" className="bg-green-100 text-green-700 border-green-200 hover:bg-green-200/80 h-8">Prgiaos</Button>
+                            <Button variant="outline" size="sm" className="bg-green-100 text-green-700 border-green-200 hover:bg-green-200/80 h-8">Projetos</Button>
                             <Button variant="outline" size="sm" className="h-8 w-8 p-0">+</Button>
-                            <Button variant="outline" size="sm" className="h-8">Sicoicta</Button>
-                             <Button variant="outline" size="sm" className="h-8">Fledermomices</Button>
+                            <Button variant="outline" size="sm" className="h-8">Solicitar</Button>
+                             <Button variant="outline" size="sm" className="h-8">Ver Histórico</Button>
                         </div>
                     </div>
                     <div className="w-full md:w-3/5 flex gap-4 items-center">
                         <div className="w-1/3">
-                             <Button size="sm" className="w-full bg-orange-500 text-white h-9 hover:bg-orange-600">Genndar</Button>
+                             <Button size="sm" className="w-full bg-orange-500 text-white h-9 hover:bg-orange-600">Gerenciar</Button>
                         </div>
                         <div className="w-2/3 h-[80px]">
                             <ResponsiveContainer width="100%" height="100%">
@@ -273,13 +273,13 @@ export default function TechLabsDashboardPage() {
             <Card>
                 <CardHeader>
                     <div className="flex justify-between">
-                        <CardTitle className="text-xl font-bold">A Pect o Martine</CardTitle>
+                        <CardTitle className="text-xl font-bold">Acompanhamento de Profissionais</CardTitle>
                         <Tabs defaultValue="acesoe" className="w-auto">
                         <TabsList className="bg-transparent p-0 h-auto">
-                            <TabsTrigger value="acesoe" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 text-sm px-2 py-1">Acesoe</TabsTrigger>
-                            <TabsTrigger value="vativas" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 text-sm px-2 py-1">Vativas</TabsTrigger>
+                            <TabsTrigger value="acesoe" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 text-sm px-2 py-1">Acessos</TabsTrigger>
+                            <TabsTrigger value="vativas" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 text-sm px-2 py-1">Ativos</TabsTrigger>
                             <TabsTrigger value="candidatos" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 text-sm px-2 py-1">Candidatos</TabsTrigger>
-                            <TabsTrigger value="messagnes" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 text-sm px-2 py-1">Messangnes</TabsTrigger>
+                            <TabsTrigger value="messagnes" className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-orange-500 rounded-none text-muted-foreground data-[state=active]:text-gray-800 text-sm px-2 py-1">Mensagens</TabsTrigger>
                         </TabsList>
                     </Tabs>
                     </div>
@@ -295,7 +295,7 @@ export default function TechLabsDashboardPage() {
                             <p className="font-bold">{prof.name}</p>
                             <p className="text-xs text-muted-foreground mb-2">{prof.tag}</p>
                             <div className="flex flex-wrap gap-1 text-sm my-2 justify-center">
-                                <Button variant="outline" size="sm" className="h-7 text-xs bg-green-100 text-green-700 border-green-200 hover:bg-green-200/80">Renvidar</Button>
+                                <Button variant="outline" size="sm" className="h-7 text-xs bg-green-100 text-green-700 border-green-200 hover:bg-green-200/80">Recomendar</Button>
                                 <Button variant="outline" size="sm" className="h-7 w-7 p-0">+</Button>
                                 <Button variant="outline" size="sm" className="h-7 w-7 p-0">+</Button>
                                 <Button variant="outline" size="sm" className="h-7 w-7 p-0">+</Button>
