@@ -30,64 +30,8 @@ export default function CompanyLayout({
 }) {
   return (
     <SidebarProvider>
-      <Sidebar>
-        <SidebarHeader>
-          <div className="flex items-center gap-2">
-            <Link href="/company" className="flex items-center gap-2">
-              <Image src="/iconecolabora.ico" alt="Collabora icon" width={28} height={28} />
-              <span className="text-2xl font-bold text-sidebar-foreground">Collabora</span>
-            </Link>
-          </div>
-        </SidebarHeader>
-        <SidebarContent>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton href="/company" tooltip="Dashboard" isActive>
-                  <Home />
-                  <span>Dashboard</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton href="#" tooltip="Minha Empresa">
-                  <Building2 />
-                  <span>Minha Empresa</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton href="#" tooltip="Meus Projetos">
-                  <FolderKanban />
-                  <span>Meus Projetos</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton href="#" tooltip="Candidaturas">
-                  <Users />
-                  <span>Candidaturas</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton href="#" tooltip="Mensagens">
-                  <MessageSquare />
-                  <span>Mensagens</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton href="#" tooltip="Profissionais">
-                  <UserSearch />
-                  <span>Profissionais</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton href="#" tooltip="Atualizar Plano">
-                  <Zap />
-                  <span>Atualizar Plano</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-        </SidebarContent>
-      </Sidebar>
-      <SidebarInset className="bg-secondary">
-        <header className="flex h-16 items-center justify-between gap-4 border-b bg-background px-4 sm:px-6">
+      <div className="flex h-screen flex-col bg-background">
+        <header className="flex h-16 shrink-0 items-center justify-between gap-4 border-b bg-background px-4 sm:px-6">
           <SidebarTrigger className="md:hidden" />
           
           <div className="relative flex-1 hidden md:flex">
@@ -141,10 +85,72 @@ export default function CompanyLayout({
             </DropdownMenu>
           </div>
         </header>
-        <div className="flex-1 overflow-auto p-4 sm:p-6">
-          {children}
+
+        <div className="flex flex-1 overflow-hidden">
+          <Sidebar>
+            <SidebarHeader>
+              <div className="flex items-center gap-2">
+                <Link href="/company" className="flex items-center gap-2">
+                  <Image src="/iconecolabora.ico" alt="Collabora icon" width={28} height={28} />
+                  <span className="text-2xl font-bold text-sidebar-foreground">Collabora</span>
+                </Link>
+              </div>
+            </SidebarHeader>
+            <SidebarContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="/company" tooltip="Dashboard" isActive>
+                      <Home />
+                      <span>Dashboard</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Minha Empresa">
+                      <Building2 />
+                      <span>Minha Empresa</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Meus Projetos">
+                      <FolderKanban />
+                      <span>Meus Projetos</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Candidaturas">
+                      <Users />
+                      <span>Candidaturas</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Mensagens">
+                      <MessageSquare />
+                      <span>Mensagens</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Profissionais">
+                      <UserSearch />
+                      <span>Profissionais</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Atualizar Plano">
+                      <Zap />
+                      <span>Atualizar Plano</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+            </SidebarContent>
+          </Sidebar>
+          <SidebarInset className="bg-secondary p-0">
+            <div className="flex-1 overflow-auto p-4 sm:p-6">
+              {children}
+            </div>
+          </SidebarInset>
         </div>
-        <footer className="border-t bg-background px-6 py-3 text-xs text-muted-foreground">
+
+        <footer className="shrink-0 border-t bg-background px-6 py-3 text-xs text-muted-foreground">
           <div className="flex items-center justify-between">
             <span>© Collabora — Todos os direitos reservados</span>
             <div className="flex items-center gap-4">
@@ -154,7 +160,7 @@ export default function CompanyLayout({
             </div>
           </div>
         </footer>
-      </SidebarInset>
+      </div>
     </SidebarProvider>
   );
 }

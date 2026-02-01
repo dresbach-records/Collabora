@@ -25,62 +25,8 @@ export default function AdminLayout({
 }) {
   return (
     <SidebarProvider>
-      <Sidebar>
-        <SidebarHeader>
-          <div className="flex items-center gap-2">
-             <Link href="/admin" className="flex items-center gap-2">
-              <Shield className="w-7 h-7 text-primary" />
-              <span className="text-2xl font-bold text-sidebar-foreground">Tech Labs</span>
-            </Link>
-          </div>
-        </SidebarHeader>
-        <SidebarContent>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton href="/admin" tooltip="Dashboard" isActive>
-                  <Home />
-                  <span>Dashboard</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton href="#" tooltip="Empresas">
-                  <Briefcase />
-                  <span>Empresas</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton href="#" tooltip="Profissionais">
-                  <Users />
-                  <span>Profissionais</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton href="#" tooltip="Métricas">
-                  <BarChart />
-                  <span>Métricas</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-               <SidebarMenuItem>
-                <SidebarMenuButton href="#" tooltip="Configurações">
-                  <Settings />
-                  <span>Configurações</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-        </SidebarContent>
-         <SidebarContent className="mt-auto">
-             <SidebarMenu>
-                <SidebarMenuItem>
-                    <SidebarMenuButton href="/" tooltip="Sair">
-                        <LogOut />
-                        <span>Sair</span>
-                    </SidebarMenuButton>
-                </SidebarMenuItem>
-             </SidebarMenu>
-         </SidebarContent>
-      </Sidebar>
-      <SidebarInset className="bg-secondary">
-        <header className="flex h-16 items-center justify-between gap-4 border-b bg-background px-4 sm:px-6">
+      <div className="flex h-screen flex-col bg-background">
+        <header className="flex h-16 shrink-0 items-center justify-between gap-4 border-b bg-background px-4 sm:px-6">
           <SidebarTrigger className="md:hidden" />
           
           <div className="relative flex-1 hidden md:flex">
@@ -113,10 +59,69 @@ export default function AdminLayout({
             </DropdownMenu>
           </div>
         </header>
-        <div className="flex-1 overflow-auto p-4 sm:p-6">
-          {children}
+
+        <div className="flex flex-1 overflow-hidden">
+          <Sidebar>
+            <SidebarHeader>
+              <div className="flex items-center gap-2">
+                 <Link href="/admin" className="flex items-center gap-2">
+                  <Shield className="w-7 h-7 text-primary" />
+                  <span className="text-2xl font-bold text-sidebar-foreground">Tech Labs</span>
+                </Link>
+              </div>
+            </SidebarHeader>
+            <SidebarContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="/admin" tooltip="Dashboard" isActive>
+                      <Home />
+                      <span>Dashboard</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Empresas">
+                      <Briefcase />
+                      <span>Empresas</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Profissionais">
+                      <Users />
+                      <span>Profissionais</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Métricas">
+                      <BarChart />
+                      <span>Métricas</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                   <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Configurações">
+                      <Settings />
+                      <span>Configurações</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+            </SidebarContent>
+             <SidebarContent className="mt-auto">
+                 <SidebarMenu>
+                    <SidebarMenuItem>
+                        <SidebarMenuButton href="/" tooltip="Sair">
+                            <LogOut />
+                            <span>Sair</span>
+                        </SidebarMenuButton>
+                    </SidebarMenuItem>
+                 </SidebarMenu>
+             </SidebarContent>
+          </Sidebar>
+          <SidebarInset className="bg-secondary p-0">
+            <div className="flex-1 overflow-auto p-4 sm:p-6">
+              {children}
+            </div>
+          </SidebarInset>
         </div>
-      </SidebarInset>
+      </div>
     </SidebarProvider>
   );
 }
