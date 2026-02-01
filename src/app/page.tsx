@@ -12,7 +12,7 @@ import { cn } from '@/lib/utils';
 
 // Helper for custom SVG icons
 const SvgIcon = ({ path, className }: { path: string, className?: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor" className={cn("h-9 w-9", className)}>
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor" className={cn("h-8 w-8", className)}>
         <path d={path}></path>
     </svg>
 );
@@ -52,8 +52,8 @@ const IntegrationsStrip = () => {
       >
         <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
           {[...allIntegrations, ...allIntegrations].map((integration, index) => (
-            <div key={index} className="mx-4 flex h-24 w-24 items-center justify-center text-muted-foreground transition-colors hover:text-primary" title={integration.name}>
-              <div className="scale-[1.8]">{integration.icon}</div>
+            <div key={index} className="mx-2 flex h-20 w-20 items-center justify-center text-muted-foreground transition-colors hover:text-primary md:mx-4 md:h-24 md:w-24" title={integration.name}>
+              <div className="scale-150 md:scale-[1.8]">{integration.icon}</div>
             </div>
           ))}
         </div>
@@ -138,7 +138,7 @@ export default function Home() {
           )}
           <div className="container mx-auto px-4 relative">
             <div className="max-w-3xl mx-auto">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                 Conecte-se com profissionais digitais
               </h1>
               <p className="mx-auto mt-6 max-w-[700px] text-lg text-accent-foreground/80 md:text-xl">
@@ -172,16 +172,16 @@ export default function Home() {
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     <div>
-                        <h2 className="text-4xl lg:text-5xl font-bold text-primary">150,000+</h2>
-                        <p className="text-muted-foreground mt-2">Profissionais digitais disponíveis</p>
+                        <h2 className="text-3xl font-bold text-primary sm:text-4xl lg:text-5xl">150,000+</h2>
+                        <p className="text-muted-foreground mt-2 sm:text-base">Profissionais digitais disponíveis</p>
                     </div>
                     <div>
-                        <h2 className="text-4xl lg:text-5xl font-bold text-primary">97%</h2>
-                        <p className="text-muted-foreground mt-2">Avaliação média dos clientes</p>
+                        <h2 className="text-3xl font-bold text-primary sm:text-4xl lg:text-5xl">97%</h2>
+                        <p className="text-muted-foreground mt-2 sm:text-base">Avaliação média dos clientes</p>
                     </div>
                     <div>
-                        <h2 className="text-4xl lg:text-5xl font-bold text-primary">20,000+</h2>
-                        <p className="text-muted-foreground mt-2">Projetos concluídos</p>
+                        <h2 className="text-3xl font-bold text-primary sm:text-4xl lg:text-5xl">20,000+</h2>
+                        <p className="text-muted-foreground mt-2 sm:text-base">Projetos concluídos</p>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
 const Logo = () => (
-  <Link href="/" className="flex items-center gap-2 group">
+  <Link href="/" className="flex items-center gap-2 group mr-6">
     <Image src="/iconecolabora.ico" alt="Collabora icon" width={28} height={28} />
     <span className="text-2xl font-bold text-foreground">Collabora</span>
   </Link>
@@ -44,49 +44,50 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <div className="flex items-center gap-6">
-          <Logo />
-          <nav className="hidden items-center gap-8 md:flex">
-            {navItems.map((item) => (
-              <NavLink key={item.href} href={item.href}>
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
+        <div className="flex items-center">
+            <Logo />
+            <nav className="hidden items-center gap-8 md:flex">
+                {navItems.map((item) => (
+                <NavLink key={item.href} href={item.href}>
+                    {item.label}
+                </NavLink>
+                ))}
+            </nav>
         </div>
 
-        <div className="hidden items-center gap-2 md:flex">
-          <Button variant="ghost" asChild>
-            <Link href="/login">Entrar</Link>
-          </Button>
-        </div>
-
-        <div className="md:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Alternar Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <div className="flex flex-col gap-6 pt-8">
-                <Logo />
-                <nav className="flex flex-col gap-4">
-                  {navItems.map((item) => (
-                    <NavLink key={item.href} href={item.href}>
-                      {item.label}
-                    </NavLink>
-                  ))}
-                </nav>
-                <div className="mt-auto flex flex-col gap-2 border-t pt-6">
-                   <Button variant="ghost" className="w-full justify-start text-lg" asChild>
-                    <Link href="/login">Entrar</Link>
-                  </Button>
+        <div className="flex items-center gap-2">
+          <div className="hidden md:flex">
+            <Button variant="ghost" asChild>
+                <Link href="/login">Entrar</Link>
+            </Button>
+          </div>
+          <div className="md:hidden">
+            <Sheet>
+                <SheetTrigger asChild>
+                <Button variant="outline" size="icon">
+                    <Menu className="h-5 w-5" />
+                    <span className="sr-only">Alternar Menu</span>
+                </Button>
+                </SheetTrigger>
+                <SheetContent side="right">
+                <div className="flex flex-col gap-6 pt-8">
+                    <Logo />
+                    <nav className="flex flex-col gap-4">
+                    {navItems.map((item) => (
+                        <NavLink key={item.href} href={item.href}>
+                        {item.label}
+                        </NavLink>
+                    ))}
+                    </nav>
+                    <div className="mt-auto flex flex-col gap-2 border-t pt-6">
+                    <Button variant="ghost" className="w-full justify-start text-lg" asChild>
+                        <Link href="/login">Entrar</Link>
+                    </Button>
+                    </div>
                 </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+                </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>
