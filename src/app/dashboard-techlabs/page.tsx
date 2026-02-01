@@ -92,7 +92,7 @@ export default function TechLabsDashboardPage() {
             <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                 <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">1,245</span><span className="text-sm text-muted-foreground">Registrados</span></div>
                 <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">326</span><span className="text-sm text-muted-foreground">Conectados</span></div>
-                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">326</span></div>
+                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">326</span><span className="text-sm text-muted-foreground">Incompletos</span></div>
                 <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">812</span><span className="text-sm text-muted-foreground">Candidatos</span></div>
             </div>
           </CardContent>
@@ -111,7 +111,7 @@ export default function TechLabsDashboardPage() {
             <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                 <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">1,012</span><span className="text-sm text-muted-foreground">Ativos</span></div>
                 <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">2,396</span><span className="text-sm text-muted-foreground">Concluídos</span></div>
-                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">2,339</span></div>
+                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">2,339</span><span className="text-sm text-muted-foreground">Em análise</span></div>
                 <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">126</span><span className="text-sm text-muted-foreground">Pendentes</span></div>
             </div>
           </CardContent>
