@@ -33,7 +33,7 @@ export default function ForCompaniesPage() {
 
   return (
     <div className="space-y-16 md:space-y-24 py-12 md:py-20">
-      <section className="container mx-auto px-4 text-center">
+      <section className="container text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
             Encontre talentos digitais e tire seus projetos do papel
@@ -50,7 +50,7 @@ export default function ForCompaniesPage() {
         </div>
       </section>
       
-      <section className="container mx-auto px-4">
+      <section className="container">
         <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Por que usar a Collabora?</h2>
         </div>
@@ -75,7 +75,7 @@ export default function ForCompaniesPage() {
       </section>
 
       <section id="pricing" className="bg-secondary py-16 md:py-24">
-        <div className="container mx-auto px-4">
+        <div className="container">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Planos para Empresas</h2>
             <p className="mt-4 text-lg text-muted-foreground">Comece grátis. Evolua conforme sua demanda.</p>
@@ -146,7 +146,7 @@ export default function ForCompaniesPage() {
         </div>
       </section>
       
-      <section className="container mx-auto px-4">
+      <section className="container">
         <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Comparativo Rápido</h2>
         </div>
@@ -174,7 +174,7 @@ export default function ForCompaniesPage() {
         </Card>
       </section>
 
-      <section className="container mx-auto px-4">
+      <section className="container">
         <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Para quem é a Collabora?</h2>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -198,7 +198,7 @@ export default function ForCompaniesPage() {
               data-ai-hint={ctaBgImage.imageHint}
             />
           )}
-          <div className="container mx-auto px-4 relative">
+          <div className="container relative">
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="mt-4 text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl text-accent-foreground">
                 Crie sua conta gratuita e publique seu primeiro projeto hoje.

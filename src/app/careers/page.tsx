@@ -25,7 +25,7 @@ export default function CareersPage() {
     return (
         <div className="bg-background">
             <section className="bg-secondary py-20 md:py-28 text-center">
-                <div className="container mx-auto px-4">
+                <div className="container">
                     <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                         Junte-se à Nossa Missão
                     </h1>
@@ -36,7 +36,7 @@ export default function CareersPage() {
             </section>
 
             <section className="py-16 md:py-24">
-                <div className="container mx-auto px-4">
+                <div className="container">
                     <div className="text-center max-w-3xl mx-auto">
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Vagas Abertas</h2>
                         <p className="mt-4 text-lg text-muted-foreground">

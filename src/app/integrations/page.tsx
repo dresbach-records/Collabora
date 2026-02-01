@@ -158,7 +158,7 @@ export default function IntegrationsPage() {
   return (
     <div className="bg-background">
       <section className="bg-secondary py-20 md:py-28 text-center">
-        <div className="container mx-auto px-4">
+        <div className="container">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
               Integrações Poderosas
             </h1>
@@ -172,7 +172,7 @@ export default function IntegrationsPage() {
       </section>
 
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
+        <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {integrationCategories.map((category) => (
               <Card key={category.title} className="flex flex-col">
@@ -202,7 +202,7 @@ export default function IntegrationsPage() {
       </section>
 
       <section className="bg-accent text-accent-foreground py-20 md:py-28 text-center">
-        <div className="container mx-auto px-4">
+        <div className="container">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Pronto para Conectar?</h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-accent-foreground/80">
               Junte-se à Collabora hoje e centralize seu fluxo de trabalho, da prospecção ao pagamento.

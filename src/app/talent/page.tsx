@@ -29,7 +29,7 @@ export default function TalentPage() {
     return (
         <div className="space-y-16 md:space-y-24 py-12 md:py-20 bg-background text-foreground">
             {/* Hero Section */}
-            <section className="container mx-auto px-4 text-center">
+            <section className="container text-center">
                 <div className="max-w-3xl mx-auto">
                     <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                         Onde o talento certo encontra o projeto ideal.
@@ -49,7 +49,7 @@ export default function TalentPage() {
             </section>
 
             {/* The Problem Section */}
-            <section className="container mx-auto px-4">
+            <section className="container">
                 <div className="text-center max-w-3xl mx-auto">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">O Desafio de Contratar no Mundo Digital</h2>
                     <p className="mt-4 text-lg text-muted-foreground">Plataformas tradicionais criam barreiras que dificultam a conexão entre empresas e talentos.</p>
@@ -80,7 +80,7 @@ export default function TalentPage() {
 
              {/* The Solution Section */}
             <section className="bg-secondary py-16 md:py-24">
-                <div className="container mx-auto px-4">
+                <div className="container">
                     <div className="text-center max-w-3xl mx-auto">
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">A Conexão que seu Projeto Precisa, sem Pegadinhas</h2>
                          <p className="mt-4 text-lg text-muted-foreground">Criamos um ambiente onde a confiança e a colaboração vêm em primeiro lugar.</p>
@@ -119,7 +119,7 @@ export default function TalentPage() {
             </section>
             
             {/* How it Works Section */}
-            <section className="container mx-auto px-4 text-center">
+            <section className="container text-center">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Como Funciona?</h2>
                 <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Em 4 passos simples, você encontra o profissional ideal para o seu projeto.</p>
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -147,7 +147,7 @@ export default function TalentPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section id="testimonials" className="container mx-auto px-4">
+            <section id="testimonials" className="container">
                 <div className="text-center">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Empresas que Confiam na Collabora</h2>
                 </div>
@@ -184,7 +184,7 @@ export default function TalentPage() {
                   data-ai-hint={heroImage.imageHint}
                 />
               )}
-              <div className="container mx-auto px-4 relative">
+              <div className="container relative">
                 <div className="text-center max-w-3xl mx-auto">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl text-accent-foreground">
                     Pronto para Montar seu Time dos Sonhos?

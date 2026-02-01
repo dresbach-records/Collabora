@@ -9,7 +9,7 @@ import {
 export default function PrivacyPolicyPage() {
   return (
     <div className="bg-secondary">
-      <div className="container mx-auto max-w-4xl px-4 py-12 md:py-20">
+      <div className="container py-12 md:py-20">
         <Card>
           <CardHeader>
             <CardTitle className="text-3xl">Política de Privacidade</CardTitle>

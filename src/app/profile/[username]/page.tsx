@@ -14,7 +14,7 @@ export default function UserProfilePage({ params }: { params: { username: string
 
     if (!user || !profile) {
         return (
-            <div className="container mx-auto px-4 py-12 text-center">
+            <div className="container py-12 text-center">
                 <h1 className="text-2xl font-bold">Perfil não encontrado</h1>
                 <p className="text-muted-foreground">O usuário que você está procurando não existe.</p>
                 <Button asChild className="mt-4">
@@ -26,7 +26,7 @@ export default function UserProfilePage({ params }: { params: { username: string
 
     return (
         <div className="bg-secondary">
-            <div className="container mx-auto px-4 py-12">
+            <div className="container py-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="md:col-span-1">
                         <Card>

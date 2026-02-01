@@ -7,7 +7,7 @@ import { Phone, Mail, HelpCircle } from "lucide-react";
 export default function ContactPage() {
   return (
     <div className="bg-secondary">
-      <div className="container mx-auto max-w-4xl px-4 py-12 md:py-20">
+      <div className="container py-12 md:py-20">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">Fale Conosco</h1>
           <p className="mx-auto mt-2 max-w-2xl text-lg text-muted-foreground">

@@ -59,7 +59,7 @@ export default function AboutPage() {
                     data-ai-hint={heroImage.imageHint}
                     />
                 )}
-                <div className="container mx-auto px-4 relative">
+                <div className="container relative">
                     <div className="max-w-3xl mx-auto">
                         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                             Redesenhando o futuro do trabalho digital.
@@ -71,7 +71,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <section className="container mx-auto px-4">
+            <section className="container">
                 <div className="text-center max-w-3xl mx-auto">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">O trabalho digital merece mais que grupos e mensagens.</h2>
                     <p className="mt-4 text-lg text-muted-foreground">
@@ -83,7 +83,7 @@ export default function AboutPage() {
             </section>
             
             <section className="bg-secondary py-16 md:py-24">
-                <div className="container mx-auto px-4">
+                <div className="container">
                     <div className="text-center max-w-3xl mx-auto">
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Nossos Valores</h2>
                         <p className="mt-4 text-lg text-muted-foreground">Os pilares que guiam cada decisão que tomamos.</p>
@@ -100,7 +100,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <section className="container mx-auto px-4 text-center">
+            <section className="container text-center">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Conheça Quem Faz Acontecer</h2>
                 <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Somos um time apaixonado por tecnologia, design e, acima de tudo, por conectar pessoas.</p>
                 <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -132,7 +132,7 @@ export default function AboutPage() {
                     data-ai-hint={ctaBgImage.imageHint}
                     />
                 )}
-                <div className="container mx-auto px-4 relative">
+                <div className="container relative">
                     <div className="text-center max-w-3xl mx-auto">
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl text-accent-foreground">
                         Faça Parte da Mudança

@@ -33,7 +33,7 @@ export default function BlogPage() {
 
     return (
         <div className="bg-secondary">
-            <div className="container mx-auto px-4 py-12 md:py-20">
+            <div className="container py-12 md:py-20">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">Blog da Collabora</h1>
                     <p className="mx-auto mt-2 max-w-2xl text-lg text-muted-foreground">

@@ -32,7 +32,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-secondary">
-      <div className="container mx-auto max-w-7xl px-4 py-12">
+      <div className="container py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4 lg:grid-cols-5">
           <div className="space-y-4 lg:col-span-2">
             <Logo />

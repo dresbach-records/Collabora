@@ -44,7 +44,7 @@ const IntegrationsStrip = () => {
   ];
   return (
     <section className="bg-background py-12 md:py-24">
-      <div className="container mx-auto px-4 text-center">
+      <div className="container text-center">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">🔗 Integrações que potencializam seu trabalho</h2>
         <p className="mx-auto mt-2 max-w-2xl text-lg text-muted-foreground">Conecte suas ferramentas favoritas em um só lugar.</p>
       </div>
@@ -137,7 +137,7 @@ export default function Home() {
               data-ai-hint={heroImage.imageHint}
             />
           )}
-          <div className="container mx-auto px-4 relative">
+          <div className="container relative">
             <div className="max-w-3xl mx-auto">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
                 Conecte-se com profissionais digitais
@@ -154,7 +154,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="trusted-by" className="container mx-auto px-4">
+        <section id="trusted-by" className="container">
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
               Aprovado por empresas líderes em todo o mundo
@@ -170,7 +170,7 @@ export default function Home() {
         </section>
         
         <section className="bg-accent/10 py-12 md:py-20">
-            <div className="container mx-auto px-4">
+            <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     <div>
                         <h2 className="text-3xl font-bold text-primary sm:text-4xl">150,000+</h2>
@@ -190,7 +190,7 @@ export default function Home() {
 
         <IntegrationsStrip />
 
-        <section id="categories" className="container mx-auto px-4">
+        <section id="categories" className="container">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Encontre especialistas em todas as categorias digitais</h2>
           </div>
@@ -228,7 +228,7 @@ export default function Home() {
               data-ai-hint={ctaBgImage.imageHint}
             />
           )}
-          <div className="container mx-auto px-4 relative">
+          <div className="container relative">
             <div className="text-center max-w-3xl mx-auto">
               <h3 className="text-lg font-semibold tracking-wide uppercase text-primary">Comece hoje gratuitamente.</h3>
               <h2 className="mt-4 text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl">
@@ -243,7 +243,7 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="testimonials" className="container mx-auto px-4 pb-16 md:pb-24">
+        <section id="testimonials" className="container pb-16 md:pb-24">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">O que nossos usuários estão dizendo</h2>
           </div>
