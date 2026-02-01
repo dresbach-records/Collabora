@@ -9,21 +9,21 @@ import { usePathname } from 'next/navigation';
 
 const Logo = () => (
   <Link href="/" className="flex items-center gap-2 text-xl font-semibold group">
-    <Shapes className="h-6 w-6 text-primary transition-colors group-hover:text-accent" />
-    <span className="font-headline text-foreground">Collabora</span>
+    <Shapes className="h-6 w-6 text-primary transition-colors group-hover:text-primary/80" />
+    <span className="font-headline text-accent-foreground">Collabora</span>
   </Link>
 );
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
   const pathname = usePathname();
-  const isActive = pathname === href;
+  const isActive = pathname === href || (href.startsWith('/#') && pathname === '/');
 
   return (
     <Link
       href={href}
       className={cn(
-        'text-base font-medium text-muted-foreground transition-colors hover:text-primary',
-        isActive && 'text-primary'
+        'text-base font-medium text-accent-foreground/80 transition-colors hover:text-accent-foreground',
+        isActive && 'text-primary font-semibold'
       )}
     >
       {children}
@@ -33,16 +33,17 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
 
 export default function Header() {
   const navItems = [
-    { href: '/projects', label: 'Projects' },
     { href: '/talent', label: 'Find Talent' },
+    { href: '/#how-it-works', label: 'How It Works' },
+    { href: '/about', label: 'About Us' },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+    <header className="sticky top-0 z-50 w-full bg-accent">
+      <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4">
         <div className="flex items-center gap-6">
           <Logo />
-          <nav className="hidden items-center gap-6 md:flex">
+          <nav className="hidden items-center gap-8 md:flex">
             {navItems.map((item) => (
               <NavLink key={item.href} href={item.href}>
                 {item.label}
@@ -52,26 +53,23 @@ export default function Header() {
         </div>
 
         <div className="hidden items-center gap-2 md:flex">
-          <Button variant="ghost" asChild>
+          <Button variant="ghost" className="text-accent-foreground hover:bg-accent-foreground/10 hover:text-accent-foreground" asChild>
             <Link href="/login">Log In</Link>
           </Button>
-          <Button variant="outline" asChild>
-            <Link href="/signup">Sign Up</Link>
-          </Button>
           <Button asChild>
-            <Link href="/dashboard/projects/new">Post a Project</Link>
+            <Link href="/signup">Get Started</Link>
           </Button>
         </div>
 
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon">
+              <Button variant="outline" size="icon" className="border-accent-foreground/50 text-accent-foreground bg-transparent hover:bg-accent-foreground/10">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent side="right" className="bg-accent text-accent-foreground border-l-accent-foreground/20">
               <div className="flex flex-col gap-6 pt-8">
                 <Logo />
                 <nav className="flex flex-col gap-4">
@@ -81,15 +79,12 @@ export default function Header() {
                     </NavLink>
                   ))}
                 </nav>
-                <div className="mt-auto flex flex-col gap-2 border-t pt-6">
-                  <Button variant="ghost" asChild>
+                <div className="mt-auto flex flex-col gap-2 border-t border-accent-foreground/20 pt-6">
+                   <Button variant="ghost" className="text-accent-foreground justify-start text-lg hover:bg-accent-foreground/10 hover:text-accent-foreground" asChild>
                     <Link href="/login">Log In</Link>
                   </Button>
-                  <Button variant="outline" asChild>
-                    <Link href="/signup">Sign Up</Link>
-                  </Button>
-                  <Button asChild>
-                    <Link href="/dashboard/projects/new">Post a Project</Link>
+                  <Button asChild className="w-full text-lg h-12">
+                    <Link href="/signup">Get Started</Link>
                   </Button>
                 </div>
               </div>

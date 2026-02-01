@@ -1,192 +1,224 @@
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { ArrowRight, Code2, ImageIcon, Palette, Search, Video } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
-import { projects } from '@/lib/data';
-import ProjectCard from '@/components/project-card';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Cog, Headphones, FileText, Palette, Star } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { cn } from '@/lib/utils';
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'hero-1');
+  const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
+  const ctaBgImage = PlaceHolderImages.find(p => p.id === 'cta-background');
 
   const categories = [
     {
-      icon: <Palette className="h-8 w-8 text-accent" />,
-      title: 'Design',
-      description: 'Logos, websites, mobile apps, and more.',
-      link: '/projects?category=design',
-    },
-    {
-      icon: <Code2 className="h-8 w-8 text-accent" />,
+      icon: <Cog className="h-8 w-8 text-primary" />,
       title: 'Development',
-      description: 'Websites, mobile apps, and custom software.',
+      description: 'Experts e website les degres, and more airce pisting on feels.',
       link: '/projects?category=development',
     },
     {
-      icon: <Video className="h-8 w-8 text-accent" />,
-      title: 'Video Editing',
-      description: 'Promotional videos, tutorials, and social media content.',
-      link: '/projects?category=video',
+      icon: <Palette className="h-8 w-8 text-primary" />,
+      title: 'Design & Creativity',
+      description: 'Projects from experts, altaners and satter mal Rohe, imettevers.',
+      link: '/projects?category=design',
     },
     {
-      icon: <ImageIcon className="h-8 w-8 text-accent" />,
-      title: 'Image Editing',
-      description: 'Photo retouching, manipulation, and optimization.',
-      link: '/projects?category=image',
+      icon: <Headphones className="h-8 w-8 text-primary" />,
+      title: 'Audio & Video',
+      description: 'Prodect beods (bater. Easjager: that sandie (se oun cenidon vopj.',
+      link: '/projects?category=audio-video',
+    },
+    {
+      icon: <FileText className="h-8 w-8 text-primary" />,
+      title: 'Writing & Content',
+      description: 'Read hae edil, tugjonp with the proprotale conteod, your Feunts.',
+      link: '/projects?category=writing',
     },
   ];
 
-  const howItWorks = [
+  const testimonials = [
     {
-      step: 1,
-      title: 'Post a Project',
-      description: 'Describe your project, set your budget, and specify the skills you need.',
+      id: 'testimonial-1',
+      name: 'John Mitchell',
+      title: 'A Project Manager',
+      quote: 'COLLABORT Suppes sepertifer sercibust with the cuntent, ainokipams cocinase helhog, tepenber and. Anridaty tasining anyiwtes, is spere optins.',
+      avatarId: 'testimonial-1',
+      rating: 5,
     },
     {
-      step: 2,
-      title: 'Find the Perfect Talent',
-      description: 'Browse profiles, review portfolios, and invite top professionals to apply.',
+      id: 'testimonial-2',
+      name: 'Sarah Davis',
+      title: 'Freelence Designer',
+      quote: 'T yoat frommoniy www wthus comanges, whone proveing fiatt and uuing, fioles, and ten each in hecaages from any pumperited henor sevenitis.',
+      avatarId: 'testimonial-2',
+      rating: 5,
     },
     {
-      step: 3,
-      title: 'Collaborate Seamlessly',
-      description: 'Use our platform to communicate, share files, and manage your project from start to finish.',
+      id: 'testimonial-3',
+      name: 'Mark Thompson',
+      title: 'co-founder at TechStartup',
+      quote: '“Very eccepptsenting, surcer prociclat, with chair wais monoloment fro cepponacd, Fihintesisinimerit, optenised theccay to charagring ppriect hagying.”',
+      avatarId: 'testimonial-3',
+      rating: 5,
     },
   ];
+
+  const companyLogos = ['Stripe', 'Slack', 'Airbnb', 'Spotify', 'Ford'];
 
   return (
-    <div className="space-y-20 md:space-y-32">
-      <section className="container mx-auto px-4 pt-16 text-center md:pt-24 lg:pt-32">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:text-left">
-          <div className="flex flex-col items-center justify-center lg:items-start">
-            <Badge variant="secondary" className="mb-4">
-              Now Hiring!
-            </Badge>
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-              Find Your Next <span className="text-primary">Great Hire</span>
-            </h1>
-            <p className="mx-auto mt-4 max-w-[700px] text-lg text-muted-foreground md:text-xl">
-              Collabora is the premier platform for discovering and collaborating with top-tier digital professionals from around the globe.
-            </p>
-            <div className="mt-8 flex w-full max-w-lg flex-col gap-2 sm:flex-row">
-              <div className="relative flex-grow">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <Input placeholder="Search for jobs or talent..." className="w-full pl-10" />
+    <>
+      <div className="space-y-20 md:space-y-28">
+        <section className="relative bg-accent text-accent-foreground pt-24 pb-20 md:pt-32 md:pb-28 text-center overflow-hidden">
+          {heroImage && (
+            <Image
+              src={heroImage.imageUrl}
+              alt="Abstract background"
+              fill
+              className="object-cover opacity-20"
+              priority
+              data-ai-hint={heroImage.imageHint}
+            />
+          )}
+          <div className="container mx-auto px-4 relative">
+            <div className="max-w-3xl mx-auto">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+                Connect with digital professionals
+              </h1>
+              <p className="mx-auto mt-6 max-w-[700px] text-lg text-accent-foreground/80 md:text-xl">
+                Hire top talent in tech, design, video, writing, and more.
+              </p>
+              <div className="mt-8">
+                <Button size="lg" asChild>
+                  <Link href="/talent">Find Talent</Link>
+                </Button>
               </div>
-              <Button size="lg" className="shrink-0">
-                <Search className="mr-2 h-5 w-5" />
-                Find Now
-              </Button>
             </div>
           </div>
-          <div className="flex items-center justify-center">
-            {heroImage && (
-              <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                width={600}
-                height={400}
-                className="rounded-xl shadow-2xl"
-                data-ai-hint={heroImage.imageHint}
-              />
-            )}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="categories" className="container mx-auto px-4">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Explore by Category</h2>
-          <p className="mx-auto mt-2 max-w-2xl text-lg text-muted-foreground">
-            Find projects and talent in the fields that matter to you.
-          </p>
-        </div>
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {categories.map((category) => (
-            <Card key={category.title} className="group transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
-              <CardHeader>
-                {category.icon}
-                <CardTitle className="pt-4">{category.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{category.description}</p>
-                <Button variant="link" asChild className="mt-4 px-0">
-                  <Link href={category.link}>
-                    Explore {category.title} <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      <section id="how-it-works" className="bg-secondary py-20 md:py-32">
-        <div className="container mx-auto px-4">
+        <section id="trusted-by" className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">How It Works</h2>
-            <p className="mx-auto mt-2 max-w-2xl text-lg text-muted-foreground">
-              Get started in just a few simple steps.
+            <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+              Trusted by leading companies worldwide
             </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:gap-x-12">
+              {companyLogos.map((logo) => (
+                <span key={logo} className="text-2xl font-bold text-muted-foreground/60">
+                  {logo}
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-            {howItWorks.map((step) => (
-              <div key={step.step} className="text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                  <span className="text-2xl font-bold">{step.step}</span>
+        </section>
+        
+        <section className="bg-accent text-accent-foreground py-16">
+            <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <h2 className="text-4xl lg:text-5xl font-bold text-primary">150,000+</h2>
+                        <p className="text-accent-foreground/80 mt-2">Digital professionals available</p>
+                    </div>
+                    <div>
+                        <h2 className="text-4xl lg:text-5xl font-bold text-primary">97%</h2>
+                        <p className="text-accent-foreground/80 mt-2">Average customer rating</p>
+                    </div>
+                    <div>
+                        <h2 className="text-4xl lg:text-5xl font-bold text-primary">20,000+</h2>
+                        <p className="text-accent-foreground/80 mt-2">Projects completed</p>
+                    </div>
                 </div>
-                <h3 className="mt-6 text-2xl font-bold">{step.title}</h3>
-                <p className="mt-2 text-muted-foreground">{step.description}</p>
-              </div>
+            </div>
+        </section>
+
+        <section id="categories" className="container mx-auto px-4">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Find Experts Across Digital Categories</h2>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {categories.map((category) => (
+              <Card key={category.title} className="group text-center flex flex-col items-center p-6">
+                <CardHeader className="p-0">
+                  <div className="bg-secondary p-4 rounded-full w-16 h-16 flex items-center justify-center">
+                    {category.icon}
+                  </div>
+                  <CardTitle className="pt-4">{category.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-0 pt-2 flex-grow">
+                  <p className="text-muted-foreground">{category.description}</p>
+                </CardContent>
+                <div className="mt-4">
+                  <Button variant="default" asChild>
+                    <Link href={category.link}>
+                      Find Talent
+                    </Link>
+                  </Button>
+                </div>
+              </Card>
             ))}
           </div>
-        </div>
-      </section>
-      
-      <section id="featured-projects" className="container mx-auto px-4">
-        <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Featured Projects</h2>
-            <p className="mt-2 text-lg text-muted-foreground">
-              Check out the latest opportunities on Collabora.
-            </p>
-          </div>
-          <Button asChild>
-            <Link href="/projects">
-              View All Projects <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.slice(0, 3).map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-      </section>
+        </section>
 
-      <section id="cta" className="container mx-auto px-4 pb-16 md:pb-24 lg:pb-32">
-        <Card className="bg-primary text-primary-foreground">
-          <div className="grid grid-cols-1 items-center gap-8 p-8 md:grid-cols-2 md:p-12">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Ready to Get Started?</h2>
-              <p className="mt-4 text-lg text-primary-foreground/80">
-                Join thousands of companies and professionals building the future of work. Sign up today and find your next opportunity.
-              </p>
-            </div>
-            <div className="flex flex-col gap-4 sm:flex-row sm:justify-end">
-              <Button variant="secondary" size="lg" asChild>
-                <Link href="/projects">Find a Project</Link>
-              </Button>
-              <Button variant="outline" size="lg" className="border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/10" asChild>
-                <Link href="/signup">Hire Talent</Link>
-              </Button>
+        <section id="how-it-works" className="relative bg-secondary py-20 md:py-32 overflow-hidden">
+          {ctaBgImage && (
+            <Image
+              src={ctaBgImage.imageUrl}
+              alt="wavy background"
+              fill
+              className="object-cover opacity-30"
+              data-ai-hint={ctaBgImage.imageHint}
+            />
+          )}
+          <div className="container mx-auto px-4 relative">
+            <div className="text-center max-w-3xl mx-auto">
+              <h3 className="text-lg font-semibold tracking-wide uppercase text-primary">Get started today for free.</h3>
+              <h2 className="mt-4 text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl">
+                Post your project and find the right talent.
+              </h2>
+              <div className="mt-8">
+                <Button size="lg" asChild>
+                  <Link href="/dashboard/projects/new">Post a Project</Link>
+                </Button>
+              </div>
             </div>
           </div>
-        </Card>
-      </section>
-    </div>
+        </section>
+        
+        <section id="testimonials" className="container mx-auto px-4 pb-16 md:pb-24">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">What Our Users Are Saying</h2>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+            {testimonials.map((testimonial) => {
+              const avatarImage = PlaceHolderImages.find(p => p.id === testimonial.avatarId);
+              return (
+                <Card key={testimonial.id} className="p-6 bg-secondary/50 border-0 shadow-lg">
+                  <CardContent className="p-0 text-center flex flex-col items-center">
+                    {avatarImage && (
+                       <Avatar className="h-20 w-20 mb-4 border-2 border-primary">
+                        <AvatarImage src={avatarImage.imageUrl} alt={testimonial.name} data-ai-hint={avatarImage.imageHint}/>
+                        <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                      </Avatar>
+                    )}
+                    <h3 className="font-bold text-lg">{testimonial.name}</h3>
+                    <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                    <div className="flex gap-0.5 mt-2 text-primary">
+                        {[...Array(5)].map((_, i) => (
+                            <Star key={i} className={cn("w-5 h-5", i < testimonial.rating ? "fill-current" : "fill-transparent stroke-current")}/>
+                        ))}
+                    </div>
+                    <p className="mt-4 text-muted-foreground italic">"{testimonial.quote}"</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </section>
+      </div>
+      <Link href="/dashboard/projects/new" style={{ writingMode: 'vertical-rl' }} className="fixed top-1/2 -translate-y-1/2 right-0 bg-primary text-primary-foreground font-bold p-4 py-6 rounded-l-md z-40 transform transition-transform hover:bg-primary/90 text-center tracking-widest uppercase">
+          Post a Project
+      </Link>
+    </>
   );
 }

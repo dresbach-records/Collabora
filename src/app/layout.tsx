@@ -10,8 +10,8 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' });
 
 export const metadata: Metadata = {
-  title: 'Collabora - Find & Hire Top Digital Talent',
-  description: 'The platform connecting companies with the best developers, designers, video editors, and more.',
+  title: 'Collabora - Connect with digital professionals',
+  description: 'Hire top talent in tech, design, video, writing, and more.',
 };
 
 export default function RootLayout({

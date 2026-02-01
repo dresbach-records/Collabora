@@ -13,8 +13,7 @@ import {
   SidebarGroupLabel,
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { Home, Briefcase, MessageSquare, User, Settings, LogOut, PlusCircle } from "lucide-react";
+import { Home, Briefcase, MessageSquare, User, Settings, LogOut, PlusCircle, Shapes } from "lucide-react";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { users } from "@/lib/data";
@@ -31,15 +30,9 @@ export default function DashboardLayout({
     <SidebarProvider>
       <Sidebar>
         <SidebarHeader>
-          <div className="flex items-center gap-3">
-            <Avatar className="size-10">
-              {userAvatar && <AvatarImage src={userAvatar.imageUrl} alt={user.username} />}
-              <AvatarFallback>{user.username.charAt(0).toUpperCase()}</AvatarFallback>
-            </Avatar>
-            <div className="overflow-hidden">
-              <p className="truncate font-semibold">{user.username}</p>
-              <p className="text-xs text-sidebar-foreground/70 truncate">{user.email}</p>
-            </div>
+          <div className="flex items-center gap-2">
+            <Shapes className="size-8 text-primary" />
+            <h1 className="text-xl font-headline font-semibold">Collabora</h1>
           </div>
         </SidebarHeader>
         <SidebarContent>
@@ -63,7 +56,7 @@ export default function DashboardLayout({
               </SidebarMenuButton>
             </SidebarMenuItem>
              <SidebarMenuItem>
-              <SidebarMenuButton href="/profile/alexdoe" tooltip="My Profile">
+              <SidebarMenuButton href={`/profile/${user.username}`} tooltip="My Profile">
                 <User />
                 <span>My Profile</span>
               </SidebarMenuButton>
@@ -83,6 +76,18 @@ export default function DashboardLayout({
         </SidebarContent>
         <SidebarFooter>
           <SidebarMenu>
+             <SidebarMenuItem>
+              <div className="flex items-center gap-3 p-2">
+                <Avatar className="size-10">
+                  {userAvatar && <AvatarImage src={userAvatar.imageUrl} alt={user.username} />}
+                  <AvatarFallback>{user.username.charAt(0).toUpperCase()}</AvatarFallback>
+                </Avatar>
+                <div className="overflow-hidden">
+                  <p className="truncate font-semibold">{user.username}</p>
+                  <p className="text-xs text-sidebar-foreground/70 truncate">{user.email}</p>
+                </div>
+              </div>
+            </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton href="/dashboard/settings" tooltip="Settings">
                 <Settings />
