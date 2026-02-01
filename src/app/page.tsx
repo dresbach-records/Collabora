@@ -196,7 +196,7 @@ export default function Home() {
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((category) => (
               <Card key={category.title} className="group text-center flex flex-col items-center p-6">
-                <CardHeader className="p-0">
+                <CardHeader className="p-0 items-center">
                   <div className="bg-secondary p-4 rounded-full w-16 h-16 flex items-center justify-center">
                     {category.icon}
                   </div>
