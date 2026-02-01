@@ -5,7 +5,7 @@ import { Button } from '../ui/button';
 const Logo = () => (
     <Link href="/" className="flex items-center gap-2 group">
         <Image src="/iconecolabora.ico" alt="Collabora icon" width={28} height={28} />
-        <span className="text-2xl font-bold text-accent-foreground">Collabora</span>
+        <span className="text-2xl font-bold text-foreground">Collabora</span>
     </Link>
 );
 
@@ -31,20 +31,20 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-accent text-accent-foreground">
+    <footer className="bg-secondary">
       <div className="container mx-auto max-w-7xl px-4 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4 lg:grid-cols-5">
           <div className="space-y-4 lg:col-span-2">
             <Logo />
-            <p className="text-accent-foreground/80">Sua jornada de trabalho começa hoje.</p>
+            <p className="text-muted-foreground">Sua jornada de trabalho começa hoje.</p>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:col-span-3 lg:col-span-3">
               <div>
-                <h3 className="font-semibold text-accent-foreground">Plataforma</h3>
+                <h3 className="font-semibold text-foreground">Plataforma</h3>
                 <ul className="mt-4 space-y-2">
                   {footerLinks.platform.map((link) => (
                     <li key={link.name}>
-                      <Link href={link.href} className="text-accent-foreground/80 hover:text-primary">
+                      <Link href={link.href} className="text-muted-foreground hover:text-primary">
                         {link.name}
                       </Link>
                     </li>
@@ -52,11 +52,11 @@ export default function Footer() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold text-accent-foreground">Empresa</h3>
+                <h3 className="font-semibold text-foreground">Empresa</h3>
                 <ul className="mt-4 space-y-2">
                   {footerLinks.company.map((link) => (
                     <li key={link.name}>
-                      <Link href={link.href} className="text-accent-foreground/80 hover:text-primary">
+                      <Link href={link.href} className="text-muted-foreground hover:text-primary">
                         {link.name}
                       </Link>
                     </li>
@@ -64,11 +64,11 @@ export default function Footer() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold text-accent-foreground">Legal</h3>
+                <h3 className="font-semibold text-foreground">Legal</h3>
                 <ul className="mt-4 space-y-2">
                   {footerLinks.legal.map((link) => (
                     <li key={link.name}>
-                      <Link href={link.href} className="text-accent-foreground/80 hover:text-primary">
+                      <Link href={link.href} className="text-muted-foreground hover:text-primary">
                         {link.name}
                       </Link>
                     </li>
@@ -77,11 +77,14 @@ export default function Footer() {
               </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-accent-foreground/20 pt-8 flex flex-col sm:flex-row items-center justify-between">
-          <p className="text-accent-foreground/80">&copy; {new Date().getFullYear()} Collabora Inc. Todos os direitos reservados.</p>
+        <div className="mt-12 border-t pt-8 flex flex-col sm:flex-row items-center justify-between">
+          <p className="text-muted-foreground">&copy; {new Date().getFullYear()} Collabora Inc. Todos os direitos reservados.</p>
           <div className="flex items-center space-x-4 mt-4 sm:mt-0">
-             <Button asChild>
+             <Button variant="ghost" asChild>
                 <Link href="/login">Login</Link>
+             </Button>
+             <Button asChild>
+                <Link href="/signup">Comece Agora</Link>
              </Button>
           </div>
         </div>
