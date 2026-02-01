@@ -15,7 +15,7 @@ import {
     Users, 
     Briefcase, 
     Settings, 
-    BarChart, 
+    BarChart2 as BarChart, 
     Shield, 
     LogOut,
     FolderKanban,
