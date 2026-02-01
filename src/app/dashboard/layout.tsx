@@ -10,7 +10,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Home, User, Briefcase, Lightbulb, FileStack, MessageSquare, Settings, Zap, Search, Bell, HelpCircle, ChevronDown, Building2, FolderKanban, Users, UserSearch } from "lucide-react";
+import { Home, User, Briefcase, Lightbulb, MessageSquare, Settings, Zap, Search, Bell, HelpCircle, ChevronDown, Building2, FolderKanban, Users, UserSearch } from "lucide-react";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { users } from "@/lib/data";
@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
-const user = users[1]; // NOTE: Hardcoded to company user for now
+const user = users[0]; // NOTE: Hardcoded to professional user
 const userRole = user.role;
 const userAvatar = PlaceHolderImages.find(p => p.id === user.avatarUrlId);
 
@@ -114,7 +114,7 @@ export default function DashboardLayout({
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton href="#" tooltip="Candidaturas">
-                  <FileStack />
+                  <Users />
                   <span>Candidaturas</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
