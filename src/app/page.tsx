@@ -3,9 +3,64 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Cog, Headphones, FileText, Palette, Star } from 'lucide-react';
+import { 
+  Cog, Headphones, FileText, Palette, Star, Instagram, Facebook, Linkedin, Twitter, Youtube, Github, Gitlab, Figma, Slack, CreditCard, Briefcase, Dribbble, Video, QrCode, Barcode 
+} from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
+
+
+// Helper for custom SVG icons
+const SvgIcon = ({ path, className }: { path: string, className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor" className={cn("h-9 w-9", className)}>
+        <path d={path}></path>
+    </svg>
+);
+
+
+// Integrations Strip Component
+const IntegrationsStrip = () => {
+  const allIntegrations = [
+    { name: "Instagram", icon: <Instagram /> },
+    { name: "Facebook", icon: <Facebook /> },
+    { name: "LinkedIn", icon: <Linkedin /> },
+    { name: "TikTok", icon: <SvgIcon path="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-1.07C16.51 7.8 15.3 6.9 14.3 5.7c-.1-.16-.26-.3-.4-.43-.04-1.26-.04-2.52-.04-3.78zM8.3 1.31C9.07 1.11 9.84 1 10.6 1c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-1.07-1.31-.72-2.52-1.63-3.52-2.73-.04-1.26-.04-2.52-.04-3.78z" /> },
+    { name: "X (Twitter)", icon: <Twitter /> },
+    { name: "Pinterest", icon: <SvgIcon path="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.084-.6-.223-2.07.034-2.902.24-.766.993-4.2 1.258-5.238.25-.99.012-1.84-.68-1.84-1.282 0-2.228 1.35-2.228 2.972 0 1.24.743 2.186 1.666 2.186.796 0 1.487-.933 1.29-2.312-.213-1.52-1.26-3.83-1.26-5.122 0-2.33 1.67-4.18 4.7-4.18 2.586 0 4.236 1.93 4.236 4.446 0 2.72-1.39 4.88-3.414 4.88-1.125 0-1.956-.91-1.72-2.016.273-1.282.83-2.67.83-3.534 0-.732-.42-1.344-1.328-1.344-.99 0-1.812.99-1.812 2.304 0 .822.312 1.67.695 2.18.04.05.05.1.02.19-.07.25-.235.91-.297 1.14-.1.4-.4.5-.8.3-1.44-.6-2.33-2.64-2.33-4.52 0-3.41 2.45-6.3 7-6.3 3.84 0 6.38 2.78 6.38 5.78 0 3.9-2.2 6.8-5.3 6.8-1.74 0-3.14-1.4-2.7-3.1.5-2.1 1.5-4.2 1.5-5.5 0-1-2-1-2-1z" /> },
+    { name: "YouTube", icon: <Youtube /> },
+    { name: "GitHub", icon: <Github /> },
+    { name: "GitLab", icon: <Gitlab /> },
+    { name: "Bitbucket", icon: <SvgIcon path="M22.05 15.37c.33-1.43-.22-2.58-1.26-3.46-.7-.6-1.52-1.1-2.2-1.75l-.33-.31c-.34-.31-.4-.82-.12-1.21.03-.04.05-.08.08-.12.33-.41.48-.9.4-1.4-.1-1.34-1.18-2.3-2.52-2.18-1.23.1-2.1 1.1-2.1 2.33 0 .58.21 1.11.58 1.52l.06.07c.2.25.26.58.15.89-.13.37-.47.6-.85.62l-1.35.09h-1.37c-.38.01-.72-.23-.85-.62-.11-.31-.05-.64.15-.89l.06-.07c.37-.41.58-.94.58-1.52 0-1.23-.88-2.23-2.1-2.33-1.34-.12-2.42.94-2.52 2.18-.08.5.07 1 .4 1.4.03.04.05.08.08.12.28.39.22.9-.12 1.21l-.33.31c-.68.65-1.5 1.15-2.2 1.75-1.04.88-1.6 2.03-1.26 3.46.39 1.67 2.11 2.82 4 2.82h10.3c1.89 0 3.61-1.15 4-2.82zM8.86 16.37H6.28c-.89 0-1.6.86-1.42 1.72.19.9 1.05 1.53 1.95 1.53h2.05c1.1 0 2-.9 2-2s-.9-2-2-2z" /> },
+    { name: "Behance", icon: <Briefcase /> },
+    { name: "Dribbble", icon: <Dribbble /> },
+    { name: "Figma", icon: <Figma /> },
+    { name: "Canva", icon: <Palette /> },
+    { name: "Vimeo", icon: <SvgIcon path="M22.9 5.8c-.2-1.7-1.1-3.4-3.1-3.4-2.1 0-3.6 1.4-4.5 3.5-.8 2-1.7 4.1-2.5 6.1-.9 2.2-1.8 4.4-2.8 4.4-1 0-1.5-1.1-2.1-3.3S7 7.5 6.4 5.9C5.9 4.3 4.9 3.2 3.6 3.2c-1.3 0-2.3 1-2.4 2.8-.2 2.7 1.7 6.6 4.6 11.5 2.8 4.9 5.2 7.5 8 7.5 2.1 0 4-1.7 4.5-5.5.5-3.5-1.2-6.5-1.2-6.5s2.5 2.3 4.3 2.9c1.8.6 3.2.3 3.6-1.1.5-1.5-1-3.4-2.5-4.4z" /> },
+    { name: "Slack", icon: <Slack /> },
+    { name: "Shopify", icon: <SvgIcon path="M19.33 3.86C19.06 3.32 18.5 3 17.89 3H6.11C5.5 3 4.94 3.32 4.67 3.86L2.3 8.32c-.14.28-.21.59-.21.91V19c0 1.1.9 2 2 2h15.83c1.1 0 2-.9 2-2V9.23c0-.32-.07-.63-.21-.91l-2.3-4.46zM12 13.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 6.5 12 6.5s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" /> },
+    { name: "Asaas", icon: <CreditCard /> },
+    { name: "Pix", icon: <QrCode /> },
+  ];
+  return (
+    <section className="bg-background py-16 md:py-24">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">🔗 Integrações que potencializam seu trabalho</h2>
+        <p className="mx-auto mt-2 max-w-2xl text-lg text-muted-foreground">Conecte suas ferramentas favoritas em um só lugar.</p>
+      </div>
+      <div
+        className="relative mt-12 w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]"
+      >
+        <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
+          {[...allIntegrations, ...allIntegrations].map((integration, index) => (
+            <div key={index} className="mx-4 flex h-24 w-24 items-center justify-center text-muted-foreground transition-colors hover:text-primary" title={integration.name}>
+              <div className="scale-[1.8]">{integration.icon}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
@@ -113,24 +168,26 @@ export default function Home() {
           </div>
         </section>
         
-        <section className="bg-accent text-accent-foreground py-16">
+        <section className="bg-accent/10 py-16">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     <div>
                         <h2 className="text-4xl lg:text-5xl font-bold text-primary">150,000+</h2>
-                        <p className="text-accent-foreground/80 mt-2">Profissionais digitais disponíveis</p>
+                        <p className="text-muted-foreground mt-2">Profissionais digitais disponíveis</p>
                     </div>
                     <div>
                         <h2 className="text-4xl lg:text-5xl font-bold text-primary">97%</h2>
-                        <p className="text-accent-foreground/80 mt-2">Avaliação média dos clientes</p>
+                        <p className="text-muted-foreground mt-2">Avaliação média dos clientes</p>
                     </div>
                     <div>
                         <h2 className="text-4xl lg:text-5xl font-bold text-primary">20,000+</h2>
-                        <p className="text-accent-foreground/80 mt-2">Projetos concluídos</p>
+                        <p className="text-muted-foreground mt-2">Projetos concluídos</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <IntegrationsStrip />
 
         <section id="categories" className="container mx-auto px-4">
           <div className="text-center">
