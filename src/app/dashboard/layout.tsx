@@ -41,37 +41,37 @@ export default function DashboardLayout({
         <SidebarContent>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton href="/dashboard" tooltip="Dashboard">
+              <SidebarMenuButton href="/dashboard" tooltip="Painel">
                 <Home />
-                <span>Dashboard</span>
+                <span>Painel</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton href="/dashboard/projects" tooltip="Projects">
+              <SidebarMenuButton href="/dashboard/projects" tooltip="Projetos">
                 <Briefcase />
-                <span>Projects</span>
+                <span>Projetos</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
              <SidebarMenuItem>
-              <SidebarMenuButton href="/dashboard/messages" tooltip="Messages">
+              <SidebarMenuButton href="/dashboard/messages" tooltip="Mensagens">
                 <MessageSquare />
-                <span>Messages</span>
+                <span>Mensagens</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
              <SidebarMenuItem>
-              <SidebarMenuButton href={`/profile/${user.username}`} tooltip="My Profile">
+              <SidebarMenuButton href={`/profile/${user.username}`} tooltip="Meu Perfil">
                 <User />
-                <span>My Profile</span>
+                <span>Meu Perfil</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
           
           <SidebarGroup className="mt-4">
-            <SidebarGroupLabel>Actions</SidebarGroupLabel>
+            <SidebarGroupLabel>Ações</SidebarGroupLabel>
             <SidebarMenuItem>
               <SidebarMenuButton href="/dashboard/projects/new">
                 <PlusCircle />
-                Post a New Project
+                Publicar Novo Projeto
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarGroup>
@@ -92,15 +92,15 @@ export default function DashboardLayout({
               </div>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton href="/dashboard/settings" tooltip="Settings">
+              <SidebarMenuButton href="/dashboard/settings" tooltip="Configurações">
                 <Settings />
-                <span>Settings</span>
+                <span>Configurações</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton href="/" tooltip="Log Out">
+              <SidebarMenuButton href="/" tooltip="Sair">
                 <LogOut />
-                <span>Log Out</span>
+                <span>Sair</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
@@ -109,7 +109,7 @@ export default function DashboardLayout({
       <SidebarInset className="bg-secondary">
         <header className="flex h-14 items-center gap-4 border-b bg-background px-6">
           <SidebarTrigger className="md:hidden" />
-          <h2 className="flex-1 text-lg font-semibold">Dashboard</h2>
+          <h2 className="flex-1 text-lg font-semibold">Painel</h2>
         </header>
         <div className="p-6">
           {children}

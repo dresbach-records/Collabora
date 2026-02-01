@@ -9,16 +9,16 @@ export default function LoginPage() {
   return (
     <Card className="w-full max-w-md shadow-xl">
       <CardHeader className="text-center">
-        <CardTitle className="text-3xl">Welcome Back</CardTitle>
-        <CardDescription>Log in to your Collabora account to continue.</CardDescription>
+        <CardTitle className="text-3xl">Bem-vindo de volta</CardTitle>
+        <CardDescription>Faça login na sua conta Collabora para continuar.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">E-mail</Label>
           <Input id="email" type="email" placeholder="m@example.com" required />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">Senha</Label>
           <Input id="password" type="password" required />
         </div>
          <div className="relative pt-4">
@@ -27,7 +27,7 @@ export default function LoginPage() {
           </div>
           <div className="relative flex justify-center text-xs uppercase">
             <span className="bg-card px-2 text-muted-foreground">
-              Or log in with
+              Ou entre com
             </span>
           </div>
         </div>
@@ -43,11 +43,11 @@ export default function LoginPage() {
         </div>
       </CardContent>
       <CardFooter className="flex flex-col gap-4">
-        <Button className="w-full">Log In</Button>
+        <Button className="w-full">Entrar</Button>
         <p className="text-sm text-center text-muted-foreground">
-          Don't have an account?{" "}
+          Não tem uma conta?{" "}
           <Link href="/signup" className="font-medium text-primary hover:underline">
-            Sign Up
+            Cadastre-se
           </Link>
         </p>
       </CardFooter>

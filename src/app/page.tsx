@@ -14,26 +14,26 @@ export default function Home() {
   const categories = [
     {
       icon: <Cog className="h-8 w-8 text-primary" />,
-      title: 'Development',
-      description: 'Experts e website les degres, and more airce pisting on feels.',
+      title: 'Desenvolvimento',
+      description: 'Especialistas em websites, aplicativos e muito mais.',
       link: '/projects?category=development',
     },
     {
       icon: <Palette className="h-8 w-8 text-primary" />,
-      title: 'Design & Creativity',
-      description: 'Projects from experts, altaners and satter mal Rohe, imettevers.',
+      title: 'Design & Criatividade',
+      description: 'Projetos de designers especializados, ilustradores e criativos.',
       link: '/projects?category=design',
     },
     {
       icon: <Headphones className="h-8 w-8 text-primary" />,
-      title: 'Audio & Video',
-      description: 'Prodect beods (bater. Easjager: that sandie (se oun cenidon vopj.',
+      title: 'Áudio & Vídeo',
+      description: 'Produção de áudio, edição de vídeo, e muito mais para seu projeto.',
       link: '/projects?category=audio-video',
     },
     {
       icon: <FileText className="h-8 w-8 text-primary" />,
-      title: 'Writing & Content',
-      description: 'Read hae edil, tugjonp with the proprotale conteod, your Feunts.',
+      title: 'Redação & Conteúdo',
+      description: 'Redatores para blogs, sites, roteiros e qualquer conteúdo que precisar.',
       link: '/projects?category=writing',
     },
   ];
@@ -42,24 +42,24 @@ export default function Home() {
     {
       id: 'testimonial-1',
       name: 'John Mitchell',
-      title: 'A Project Manager',
-      quote: 'COLLABORT Suppes sepertifer sercibust with the cuntent, ainokipams cocinase helhog, tepenber and. Anridaty tasining anyiwtes, is spere optins.',
+      title: 'Gerente de Projetos',
+      quote: 'A Collabora nos ajudou a encontrar os melhores freelancers para o nosso projeto. O processo foi rápido e eficiente, e estamos muito satisfeitos com o resultado.',
       avatarId: 'testimonial-1',
       rating: 5,
     },
     {
       id: 'testimonial-2',
       name: 'Sarah Davis',
-      title: 'Freelence Designer',
-      quote: 'T yoat frommoniy www wthus comanges, whone proveing fiatt and uuing, fioles, and ten each in hecaages from any pumperited henor sevenitis.',
+      title: 'Designer Freelancer',
+      quote: 'Como designer freelancer, a plataforma me conectou com clientes incríveis e projetos desafiadores. Recomendo a todos os profissionais da área.',
       avatarId: 'testimonial-2',
       rating: 5,
     },
     {
       id: 'testimonial-3',
       name: 'Mark Thompson',
-      title: 'co-founder at TechStartup',
-      quote: '“Very eccepptsenting, surcer prociclat, with chair wais monoloment fro cepponacd, Fihintesisinimerit, optenised theccay to charagring ppriect hagying.”',
+      title: 'Cofundador na TechStartup',
+      quote: '“Uma experiência excepcional. O gerenciamento de projetos é simples e a qualidade dos profissionais é altíssima. A Collabora otimizou nosso processo de contratação.”',
       avatarId: 'testimonial-3',
       rating: 5,
     },
@@ -84,14 +84,14 @@ export default function Home() {
           <div className="container mx-auto px-4 relative">
             <div className="max-w-3xl mx-auto">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                Connect with digital professionals
+                Conecte-se com profissionais digitais
               </h1>
               <p className="mx-auto mt-6 max-w-[700px] text-lg text-accent-foreground/80 md:text-xl">
-                Hire top talent in tech, design, video, writing, and more.
+                Contrate os melhores talentos em tecnologia, design, vídeo, redação e muito mais.
               </p>
               <div className="mt-8">
                 <Button size="lg" asChild>
-                  <Link href="/talent">Find Talent</Link>
+                  <Link href="/talent">Encontrar Talentos</Link>
                 </Button>
               </div>
             </div>
@@ -101,7 +101,7 @@ export default function Home() {
         <section id="trusted-by" className="container mx-auto px-4">
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              Trusted by leading companies worldwide
+              Aprovado por empresas líderes em todo o mundo
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:gap-x-12">
               {companyLogos.map((logo) => (
@@ -118,15 +118,15 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     <div>
                         <h2 className="text-4xl lg:text-5xl font-bold text-primary">150,000+</h2>
-                        <p className="text-accent-foreground/80 mt-2">Digital professionals available</p>
+                        <p className="text-accent-foreground/80 mt-2">Profissionais digitais disponíveis</p>
                     </div>
                     <div>
                         <h2 className="text-4xl lg:text-5xl font-bold text-primary">97%</h2>
-                        <p className="text-accent-foreground/80 mt-2">Average customer rating</p>
+                        <p className="text-accent-foreground/80 mt-2">Avaliação média dos clientes</p>
                     </div>
                     <div>
                         <h2 className="text-4xl lg:text-5xl font-bold text-primary">20,000+</h2>
-                        <p className="text-accent-foreground/80 mt-2">Projects completed</p>
+                        <p className="text-accent-foreground/80 mt-2">Projetos concluídos</p>
                     </div>
                 </div>
             </div>
@@ -134,7 +134,7 @@ export default function Home() {
 
         <section id="categories" className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Find Experts Across Digital Categories</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Encontre especialistas em todas as categorias digitais</h2>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((category) => (
@@ -151,7 +151,7 @@ export default function Home() {
                 <div className="mt-4">
                   <Button variant="default" asChild>
                     <Link href={category.link}>
-                      Find Talent
+                      Encontrar Talentos
                     </Link>
                   </Button>
                 </div>
@@ -172,13 +172,13 @@ export default function Home() {
           )}
           <div className="container mx-auto px-4 relative">
             <div className="text-center max-w-3xl mx-auto">
-              <h3 className="text-lg font-semibold tracking-wide uppercase text-primary">Get started today for free.</h3>
+              <h3 className="text-lg font-semibold tracking-wide uppercase text-primary">Comece hoje gratuitamente.</h3>
               <h2 className="mt-4 text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl">
-                Post your project and find the right talent.
+                Publique seu projeto e encontre o talento certo.
               </h2>
               <div className="mt-8">
                 <Button size="lg" asChild>
-                  <Link href="/dashboard/projects/new">Post a Project</Link>
+                  <Link href="/dashboard/projects/new">Publicar um Projeto</Link>
                 </Button>
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function Home() {
         
         <section id="testimonials" className="container mx-auto px-4 pb-16 md:pb-24">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">What Our Users Are Saying</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">O que nossos usuários estão dizendo</h2>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {testimonials.map((testimonial) => {
@@ -217,7 +217,7 @@ export default function Home() {
         </section>
       </div>
       <Link href="/dashboard/projects/new" style={{ writingMode: 'vertical-rl' }} className="fixed top-1/2 -translate-y-1/2 right-0 bg-primary text-primary-foreground font-bold p-4 py-6 rounded-l-md z-40 transform transition-transform hover:bg-primary/90 text-center tracking-widest uppercase">
-          Post a Project
+          Publicar um Projeto
       </Link>
     </>
   );

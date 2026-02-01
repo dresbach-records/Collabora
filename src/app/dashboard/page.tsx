@@ -5,13 +5,13 @@ export default function DashboardPage() {
     <div className="grid gap-6">
       <Card>
         <CardHeader>
-          <CardTitle>Welcome to your Dashboard!</CardTitle>
+          <CardTitle>Bem-vindo ao seu Painel!</CardTitle>
           <CardDescription>
-            This is your central hub for managing projects, applications, and your profile.
+            Este é o seu centro para gerenciar projetos, candidaturas e seu perfil.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <p>More features and widgets coming soon!</p>
+          <p>Mais recursos e widgets em breve!</p>
         </CardContent>
       </Card>
     </div>

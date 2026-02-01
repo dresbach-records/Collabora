@@ -10,12 +10,12 @@ export default function SignupPage() {
   return (
     <Card className="w-full max-w-md">
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl">Create Your Account</CardTitle>
-        <CardDescription>Join Collabora to hire or get hired.</CardDescription>
+        <CardTitle className="text-2xl">Crie sua conta</CardTitle>
+        <CardDescription>Junte-se à Collabora para contratar ou ser contratado.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
-          <Label>I am a...</Label>
+          <Label>Eu sou um...</Label>
           <RadioGroup defaultValue="professional" className="grid grid-cols-2 gap-4">
             <div>
               <RadioGroupItem value="professional" id="professional" className="peer sr-only" />
@@ -23,7 +23,7 @@ export default function SignupPage() {
                 htmlFor="professional"
                 className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
               >
-                Professional
+                Profissional
               </Label>
             </div>
             <div>
@@ -32,7 +32,7 @@ export default function SignupPage() {
                 htmlFor="company"
                 className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
               >
-                Company
+                Empresa
               </Label>
             </div>
           </RadioGroup>
@@ -43,7 +43,7 @@ export default function SignupPage() {
           </div>
           <div className="relative flex justify-center text-xs uppercase">
             <span className="bg-card px-2 text-muted-foreground">
-              Or continue with
+              Ou continue com
             </span>
           </div>
         </div>
@@ -58,20 +58,20 @@ export default function SignupPage() {
           </Button>
         </div>
         <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">E-mail</Label>
           <Input id="email" type="email" placeholder="m@example.com" required />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">Senha</Label>
           <Input id="password" type="password" required />
         </div>
       </CardContent>
       <CardFooter className="flex flex-col gap-4">
-        <Button className="w-full">Create Account</Button>
+        <Button className="w-full">Criar Conta</Button>
         <p className="text-sm text-center text-muted-foreground">
-          Already have an account?{" "}
+          Já tem uma conta?{" "}
           <Link href="/login" className="font-medium text-primary hover:underline">
-            Log In
+            Entrar
           </Link>
         </p>
       </CardFooter>

@@ -54,7 +54,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               </Link>
             </CardTitle>
             {company && (
-              <CardDescription>by <Link href={`/company/${company.slug}`} className="font-medium text-foreground hover:text-primary">{company.name}</Link></CardDescription>
+              <CardDescription>por <Link href={`/company/${company.slug}`} className="font-medium text-foreground hover:text-primary">{company.name}</Link></CardDescription>
             )}
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <CardFooter className="p-6 pt-0">
         <Button asChild className="w-full">
           <Link href={`/projects/${project.id}`}>
-            View Project <ArrowRight className="ml-2 h-4 w-4" />
+            Ver Projeto <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>
       </CardFooter>

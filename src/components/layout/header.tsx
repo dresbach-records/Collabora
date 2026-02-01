@@ -34,9 +34,9 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
 
 export default function Header() {
   const navItems = [
-    { href: '/talent', label: 'Find Talent' },
-    { href: '/#how-it-works', label: 'How It Works' },
-    { href: '/about', label: 'About Us' },
+    { href: '/talent', label: 'Encontrar Talentos' },
+    { href: '/#how-it-works', label: 'Como Funciona' },
+    { href: '/about', label: 'Sobre Nós' },
   ];
 
   return (
@@ -55,10 +55,10 @@ export default function Header() {
 
         <div className="hidden items-center gap-2 md:flex">
           <Button variant="ghost" className="text-accent-foreground hover:bg-accent-foreground/10 hover:text-accent-foreground" asChild>
-            <Link href="/login">Log In</Link>
+            <Link href="/login">Entrar</Link>
           </Button>
           <Button asChild>
-            <Link href="/signup">Get Started</Link>
+            <Link href="/signup">Começar</Link>
           </Button>
         </div>
 
@@ -67,7 +67,7 @@ export default function Header() {
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="border-accent-foreground/50 text-accent-foreground bg-transparent hover:bg-accent-foreground/10">
                 <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle Menu</span>
+                <span className="sr-only">Alternar Menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="bg-accent text-accent-foreground border-l-accent-foreground/20">
@@ -82,10 +82,10 @@ export default function Header() {
                 </nav>
                 <div className="mt-auto flex flex-col gap-2 border-t border-accent-foreground/20 pt-6">
                    <Button variant="ghost" className="text-accent-foreground justify-start text-lg hover:bg-accent-foreground/10 hover:text-accent-foreground" asChild>
-                    <Link href="/login">Log In</Link>
+                    <Link href="/login">Entrar</Link>
                   </Button>
                   <Button asChild className="w-full text-lg h-12">
-                    <Link href="/signup">Get Started</Link>
+                    <Link href="/signup">Começar</Link>
                   </Button>
                 </div>
               </div>
