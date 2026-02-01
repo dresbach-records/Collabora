@@ -9,6 +9,7 @@ import {
   SidebarMenuSub,
   SidebarMenuSubItem,
   SidebarMenuSubButton,
+  SidebarSeparator,
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { 
@@ -29,12 +30,17 @@ import {
   CreditCard,
   Image as ImageIcon,
   Bell,
-  Puzzle
+  Puzzle,
+  LogOut,
+  Lock,
+  Zap,
 } from "lucide-react";
 import Link from "next/link";
 import { users } from "@/lib/data";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { usePathname } from "next/navigation";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
 
 
 const professionalUser = users.find(u => u.role === 'PROFESSIONAL');
@@ -499,6 +505,32 @@ export default function ProfessionalSidebar() {
                   </CollapsibleContent>
                 </Collapsible>
               </SidebarMenuItem>
+            </SidebarMenu>
+        </SidebarContent>
+        <SidebarContent className="mt-auto p-2">
+            <div className="md:hidden">
+                <SidebarSeparator />
+                <div className="p-2 space-y-2">
+                    <Badge variant="outline" className="border-destructive text-destructive">
+                        <Lock className="mr-1.5 h-3 w-3" />
+                        Plano Free
+                    </Badge>
+                    <Button asChild variant="ghost" size="sm" className="w-full justify-start text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground">
+                        <Link href="/dashboard/upgrade">
+                            <Zap className="mr-2 h-4 w-4" />
+                            Atualizar plano
+                        </Link>
+                    </Button>
+                </div>
+            </div>
+            <SidebarSeparator />
+            <SidebarMenu>
+                <SidebarMenuItem>
+                    <SidebarMenuButton href="/" tooltip="Sair">
+                        <LogOut />
+                        <span>Sair</span>
+                    </SidebarMenuButton>
+                </SidebarMenuItem>
             </SidebarMenu>
         </SidebarContent>
     </Sidebar>

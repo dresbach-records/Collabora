@@ -38,7 +38,7 @@ export default function ProfessionalHeader() {
             </div>
 
             <div className="flex items-center gap-2 sm:gap-4">
-                <div className="hidden items-center gap-2 sm:flex">
+                <div className="hidden items-center gap-2 md:flex">
                     <Badge variant="outline" className="border-destructive text-destructive">
                         <Lock className="mr-1.5 h-3 w-3" />
                         Plano Free
