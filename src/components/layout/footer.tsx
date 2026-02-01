@@ -1,6 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '../ui/button';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 const Logo = () => (
     <Link href="/" className="flex items-center gap-2 group">
@@ -38,7 +43,9 @@ export default function Footer() {
             <Logo />
             <p className="text-muted-foreground">Sua jornada de trabalho começa hoje.</p>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:col-span-3 lg:col-span-3">
+          
+          {/* Links for Desktop */}
+          <div className="hidden md:grid md:grid-cols-3 md:gap-8 md:col-span-3 lg:col-span-3">
               <div>
                 <h3 className="font-semibold text-foreground">Plataforma</h3>
                 <ul className="mt-4 space-y-2">
@@ -76,6 +83,55 @@ export default function Footer() {
                 </ul>
               </div>
           </div>
+
+          {/* Accordion for Mobile */}
+          <div className="md:hidden">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="platform">
+                <AccordionTrigger className="font-semibold">Plataforma</AccordionTrigger>
+                <AccordionContent>
+                  <ul className="space-y-3 pt-2">
+                    {footerLinks.platform.map((link) => (
+                      <li key={link.name}>
+                        <Link href={link.href} className="text-muted-foreground hover:text-primary">
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="company">
+                <AccordionTrigger className="font-semibold">Empresa</AccordionTrigger>
+                <AccordionContent>
+                   <ul className="space-y-3 pt-2">
+                    {footerLinks.company.map((link) => (
+                      <li key={link.name}>
+                        <Link href={link.href} className="text-muted-foreground hover:text-primary">
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="legal">
+                <AccordionTrigger className="font-semibold">Legal</AccordionTrigger>
+                <AccordionContent>
+                   <ul className="space-y-3 pt-2">
+                    {footerLinks.legal.map((link) => (
+                      <li key={link.name}>
+                        <Link href={link.href} className="text-muted-foreground hover:text-primary">
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+
         </div>
         <div className="mt-12 border-t pt-8 flex flex-col items-center justify-center gap-4">
           <p className="text-muted-foreground text-center">&copy; {new Date().getFullYear()} Collabora Inc. Todos os direitos reservados.</p>
