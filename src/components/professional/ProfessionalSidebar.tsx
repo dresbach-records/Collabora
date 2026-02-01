@@ -28,7 +28,8 @@ import {
   BarChart2,
   CreditCard,
   Image as ImageIcon,
-  Bell
+  Bell,
+  Puzzle
 } from "lucide-react";
 import Link from "next/link";
 import { users } from "@/lib/data";
@@ -389,6 +390,13 @@ export default function ProfessionalSidebar() {
                     </SidebarMenuSub>
                   </CollapsibleContent>
                 </Collapsible>
+              </SidebarMenuItem>
+
+              <SidebarMenuItem>
+                <SidebarMenuButton href="/integrations" tooltip="Integrações">
+                  <Puzzle />
+                  <span>Integrações</span>
+                </SidebarMenuButton>
               </SidebarMenuItem>
 
                <SidebarMenuItem asChild>

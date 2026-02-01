@@ -28,6 +28,7 @@ import {
     Bell,
     ChevronDown,
     ChevronRight,
+    Puzzle
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -433,6 +434,14 @@ export default function AdminSidebar() {
                         </SidebarMenuSub>
                       </CollapsibleContent>
                     </Collapsible>
+                  </SidebarMenuItem>
+
+                   {/* Integrações */}
+                   <SidebarMenuItem>
+                    <SidebarMenuButton href="/integrations" tooltip="Integrações" className={menuButtonClass}>
+                      <Puzzle />
+                      <span>Integrações</span>
+                    </SidebarMenuButton>
                   </SidebarMenuItem>
                   
                   {/* Administradores */}

@@ -24,7 +24,8 @@ import {
   CreditCard,
   ChevronDown,
   ChevronRight,
-  Bell
+  Bell,
+  Puzzle,
 } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { usePathname } from "next/navigation";
@@ -311,6 +312,13 @@ export default function CompanySidebar() {
                     </SidebarMenuSub>
                   </CollapsibleContent>
                 </Collapsible>
+              </SidebarMenuItem>
+              
+               <SidebarMenuItem>
+                <SidebarMenuButton href="/integrations" tooltip="Integrações">
+                  <Puzzle />
+                  <span>Integrações</span>
+                </SidebarMenuButton>
               </SidebarMenuItem>
 
                <SidebarMenuItem asChild>
