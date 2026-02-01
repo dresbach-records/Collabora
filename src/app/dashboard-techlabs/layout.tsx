@@ -17,75 +17,23 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
-const adminUserAvatar = PlaceHolderImages.find(p => p.id === 'testimonial-1');
-
-
 export default function TechLabsDashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const adminUserAvatar = PlaceHolderImages.find(p => p.id === 'testimonial-1');
+
   return (
     <SidebarProvider>
-      <Sidebar
-        className="bg-[#2D323C] text-white border-r-0"
-        collapsible="none"
-      >
-        <SidebarHeader className="p-4">
-          <div className="flex items-center gap-2">
-             <Link href="/dashboard-techlabs" className="flex items-center gap-3">
-              <Rocket className="w-8 h-8 text-[#F97316]" />
-              <span className="text-2xl font-bold">Tech Labs</span>
-            </Link>
+      <div className="flex h-screen flex-col bg-background">
+        <header className="flex h-16 shrink-0 items-center justify-between gap-4 border-b bg-white px-4 sm:px-6">
+          <div className="flex items-center gap-3">
+              <Link href="/dashboard-techlabs" className="flex items-center gap-3">
+                <Rocket className="w-8 h-8 text-[#F97316]" />
+                <span className="text-2xl font-bold">Tech Labs</span>
+              </Link>
           </div>
-        </SidebarHeader>
-        <SidebarContent className="p-2">
-            <SidebarMenu>
-              <SidebarMenuItem className="px-2">
-                <SidebarMenuButton 
-                  href="/dashboard-techlabs" 
-                  className="bg-[#F97316] text-white hover:bg-[#F97316]/90 data-[active=true]:bg-[#F97316] data-[active=true]:text-white"
-                  isActive
-                >
-                  <LayoutDashboard />
-                  <span>Dashboard</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem className="px-2">
-                <SidebarMenuButton href="#" className="hover:bg-white/10 text-white/80 hover:text-white data-[active=true]:text-white data-[active=true]:bg-white/10">
-                  <BarChart2 />
-                  <span>Estatísticas</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem className="px-2">
-                <SidebarMenuButton href="#" className="hover:bg-white/10 text-white/80 hover:text-white data-[active=true]:text-white data-[active=true]:bg-white/10">
-                  <Users />
-                  <span>Profissionais</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem className="px-2">
-                <SidebarMenuButton href="#" className="hover:bg-white/10 text-white/80 hover:text-white data-[active=true]:text-white data-[active=true]:bg-white/10">
-                  <Briefcase />
-                  <span>Projects</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-               <SidebarMenuItem className="px-2">
-                <SidebarMenuButton href="#" className="hover:bg-white/10 text-white/80 hover:text-white data-[active=true]:text-white data-[active=true]:bg-white/10">
-                  <Settings />
-                  <span>Configurações</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-               <SidebarMenuItem className="px-2">
-                <SidebarMenuButton href="#" className="hover:bg-white/10 text-white/80 hover:text-white data-[active=true]:text-white data-[active=true]:bg-white/10">
-                  <HelpCircle />
-                  <span>Suporte</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-        </SidebarContent>
-      </Sidebar>
-      <SidebarInset className="bg-[#F3F4F6]">
-        <header className="flex h-16 items-center justify-between gap-4 border-b bg-white px-4 sm:px-6">          
           <div className="relative flex-1">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
@@ -94,7 +42,6 @@ export default function TechLabsDashboardLayout({
               className="w-full rounded-lg bg-[#F3F4F6] pl-8 md:w-[280px] border-none"
             />
           </div>
-
           <div className="ml-auto flex items-center gap-3 sm:gap-4">
             <Select defaultValue="pre">
               <SelectTrigger className="w-[120px] hidden sm:flex border-none text-muted-foreground">
@@ -137,10 +84,65 @@ export default function TechLabsDashboardLayout({
             </DropdownMenu>
           </div>
         </header>
-        <div className="flex-1 overflow-auto p-4 sm:p-6">
-          {children}
+
+        <div className="flex flex-1 overflow-hidden">
+          <Sidebar
+            className="bg-[#2D323C] text-white border-r-0"
+            collapsible="none"
+          >
+            <SidebarContent className="p-2">
+                <SidebarMenu>
+                  <SidebarMenuItem className="px-2">
+                    <SidebarMenuButton 
+                      href="/dashboard-techlabs" 
+                      className="bg-[#F97316] text-white hover:bg-[#F97316]/90 data-[active=true]:bg-[#F97316] data-[active=true]:text-white"
+                      isActive
+                    >
+                      <LayoutDashboard />
+                      <span>Dashboard</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem className="px-2">
+                    <SidebarMenuButton href="#" className="hover:bg-white/10 text-white/80 hover:text-white data-[active=true]:text-white data-[active=true]:bg-white/10">
+                      <BarChart2 />
+                      <span>Estatísticas</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem className="px-2">
+                    <SidebarMenuButton href="#" className="hover:bg-white/10 text-white/80 hover:text-white data-[active=true]:text-white data-[active=true]:bg-white/10">
+                      <Users />
+                      <span>Profissionais</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem className="px-2">
+                    <SidebarMenuButton href="#" className="hover:bg-white/10 text-white/80 hover:text-white data-[active=true]:text-white data-[active=true]:bg-white/10">
+                      <Briefcase />
+                      <span>Projects</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                   <SidebarMenuItem className="px-2">
+                    <SidebarMenuButton href="#" className="hover:bg-white/10 text-white/80 hover:text-white data-[active=true]:text-white data-[active=true]:bg-white/10">
+                      <Settings />
+                      <span>Configurações</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                   <SidebarMenuItem className="px-2">
+                    <SidebarMenuButton href="#" className="hover:bg-white/10 text-white/80 hover:text-white data-[active=true]:text-white data-[active=true]:bg-white/10">
+                      <HelpCircle />
+                      <span>Suporte</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+            </SidebarContent>
+          </Sidebar>
+          <SidebarInset className="bg-[#F3F4F6] p-0">
+            <div className="flex-1 overflow-auto">
+              {children}
+            </div>
+          </SidebarInset>
         </div>
-        <footer className="border-t bg-white px-6 py-3 text-xs text-muted-foreground">
+
+        <footer className="shrink-0 border-t bg-white px-6 py-3 text-xs text-muted-foreground">
           <div className="flex items-center justify-between">
             <span>© Tech Labs — Todos es direitos reservados</span>
             <div className="flex items-center gap-4">
@@ -149,7 +151,7 @@ export default function TechLabsDashboardLayout({
             </div>
           </div>
         </footer>
-      </SidebarInset>
+      </div>
     </SidebarProvider>
   );
 }
