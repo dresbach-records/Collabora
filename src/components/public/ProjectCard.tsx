@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { companies } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 import { ArrowRight, Briefcase, CalendarDays, DollarSign } from 'lucide-react';
 
 interface ProjectCardProps {

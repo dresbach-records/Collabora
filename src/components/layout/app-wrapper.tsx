@@ -7,9 +7,9 @@ import Footer from '@/components/layout/footer';
 export function AppWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAuthPage = pathname.startsWith('/login') || pathname.startsWith('/signup');
-  const isDashboardPage = pathname.startsWith('/dashboard');
+  const isRolePage = pathname.startsWith('/admin') || pathname.startsWith('/company') || pathname.startsWith('/dashboard');
 
-  const showHeaderAndFooter = !isAuthPage && !isDashboardPage;
+  const showHeaderAndFooter = !isAuthPage && !isRolePage;
 
   return (
     <div className="flex min-h-screen flex-col">

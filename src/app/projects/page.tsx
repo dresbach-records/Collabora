@@ -1,4 +1,4 @@
-import ProjectCard from "@/components/project-card";
+import ProjectCard from "@/components/public/ProjectCard";
 import { projects } from "@/lib/data";
 
 export default function ProjectsPage() {
