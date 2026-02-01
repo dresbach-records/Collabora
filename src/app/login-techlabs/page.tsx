@@ -2,10 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { User, Lock } from 'lucide-react';
+import { User, Lock, Loader2 } from 'lucide-react';
 
 // Custom Rocket Icon based on the image
 const RocketIcon = ({ className }: { className?: string }) => (
@@ -51,6 +53,19 @@ const LinkedInIcon = (props) => (
 
 export default function TechLabsLoginPage() {
   const loginIllustration = PlaceHolderImages.find(p => p.id === 'techlabs-login-bg');
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
+  const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsLoading(true);
+
+    // Simulate API call for demonstration
+    setTimeout(() => {
+      setIsLoading(false);
+      router.push('/dashboard-techlabs');
+    }, 1500);
+  };
 
   return (
     <div className="min-h-screen bg-[#f89d4b] p-4 sm:p-6 md:p-8 flex items-center justify-center font-body">
@@ -80,22 +95,23 @@ export default function TechLabsLoginPage() {
             <h1 className="text-2xl font-bold text-gray-800 font-headline">Bem-vindo(a) de volta.</h1>
             <p className="text-gray-500 mt-2 mb-6">Faça login na sua conta da Tech Labs.</p>
 
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleLogin}>
               <div className="relative">
                 <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                <Input id="email" type="email" placeholder="seu@email.com" className="pl-10 bg-gray-50 border-gray-200" />
+                <Input id="email" type="email" placeholder="seu@email.com" className="pl-10 bg-gray-50 border-gray-200" required />
               </div>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                <Input id="password" type="password" placeholder="••••••••" className="pl-10 bg-gray-50 border-gray-200" />
+                <Input id="password" type="password" placeholder="••••••••" className="pl-10 bg-gray-50 border-gray-200" required />
               </div>
               <div className="text-right">
                 <Link href="#" className="text-sm text-[#F97316] hover:underline">
                   Esqueceu sua senha?
                 </Link>
               </div>
-              <Button type="submit" className="w-full bg-[#F97316] hover:bg-[#F97316]/90 text-white font-semibold" size="lg">
-                Entrar
+              <Button type="submit" className="w-full bg-[#F97316] hover:bg-[#F97316]/90 text-white font-semibold" size="lg" disabled={isLoading}>
+                {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                {isLoading ? 'Entrando...' : 'Entrar'}
               </Button>
               <div className="text-center pt-2">
                  <p className="text-sm text-gray-600">
