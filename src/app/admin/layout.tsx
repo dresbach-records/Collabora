@@ -26,19 +26,27 @@ export default function AdminLayout({
   return (
     <SidebarProvider>
       <div className="flex h-screen flex-col bg-background">
-        <header className="flex h-16 shrink-0 items-center justify-between gap-4 border-b bg-background px-4 sm:px-6">
-          <SidebarTrigger className="md:hidden" />
+        <header className="flex h-16 shrink-0 items-center gap-4 border-b bg-background px-4 sm:px-6">
+          <div className="flex items-center gap-4">
+            <SidebarTrigger className="md:hidden" />
+             <Link href="/admin" className="flex items-center gap-2">
+              <Shield className="w-7 h-7 text-primary" />
+              <span className="hidden text-2xl font-bold text-foreground md:inline">Tech Labs</span>
+            </Link>
+          </div>
           
-          <div className="relative flex-1 hidden md:flex">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Buscar usuários, empresas, projetos..."
-              className="w-full rounded-lg bg-secondary pl-8 md:w-[200px] lg:w-[320px]"
-            />
+          <div className="relative hidden flex-1 justify-center md:flex">
+            <div className="w-full max-w-lg">
+                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                <Input
+                type="search"
+                placeholder="Buscar usuários, empresas, projetos..."
+                className="w-full rounded-lg bg-secondary pl-8"
+                />
+            </div>
           </div>
 
-          <div className="ml-auto flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon" className="rounded-full">
@@ -63,12 +71,6 @@ export default function AdminLayout({
         <div className="relative flex flex-1 overflow-hidden">
           <Sidebar>
             <SidebarHeader>
-              <div className="flex items-center gap-2">
-                 <Link href="/admin" className="flex items-center gap-2">
-                  <Shield className="w-7 h-7 text-primary" />
-                  <span className="text-2xl font-bold text-sidebar-foreground">Tech Labs</span>
-                </Link>
-              </div>
             </SidebarHeader>
             <SidebarContent>
                 <SidebarMenu>

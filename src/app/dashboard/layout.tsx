@@ -31,19 +31,27 @@ export default function DashboardLayout({
   return (
     <SidebarProvider>
       <div className="flex h-screen flex-col bg-background">
-        <header className="flex h-16 shrink-0 items-center justify-between gap-4 border-b bg-background px-4 sm:px-6">
-          <SidebarTrigger className="md:hidden" />
+        <header className="flex h-16 shrink-0 items-center gap-4 border-b bg-background px-4 sm:px-6">
+          <div className="flex items-center gap-4">
+            <SidebarTrigger className="md:hidden" />
+            <Link href="/dashboard" className="flex items-center gap-2">
+              <Image src="/iconecolabora.ico" alt="Collabora icon" width={28} height={28} />
+              <span className="hidden text-2xl font-bold text-foreground md:inline">Collabora</span>
+            </Link>
+          </div>
           
-          <div className="relative flex-1 hidden md:flex">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Buscar projetos ou empresas"
-              className="w-full rounded-lg bg-secondary pl-8 md:w-[200px] lg:w-[320px]"
-            />
+          <div className="relative hidden flex-1 justify-center md:flex">
+            <div className="w-full max-w-lg">
+                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                <Input
+                type="search"
+                placeholder="Buscar projetos ou empresas"
+                className="w-full rounded-lg bg-secondary pl-8"
+                />
+            </div>
           </div>
 
-          <div className="ml-auto flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <div className="hidden items-center gap-4 sm:flex">
                 <Badge variant="outline" className="border-destructive text-destructive">
                     <Lock className="mr-1.5 h-3 w-3" />
@@ -90,12 +98,6 @@ export default function DashboardLayout({
         <div className="relative flex flex-1 overflow-hidden">
           <Sidebar>
             <SidebarHeader>
-              <div className="flex items-center gap-2">
-                <Link href="/dashboard" className="flex items-center gap-2">
-                  <Image src="/iconecolabora.ico" alt="Collabora icon" width={28} height={28} />
-                  <span className="text-2xl font-bold text-sidebar-foreground">Collabora</span>
-                </Link>
-              </div>
             </SidebarHeader>
             <SidebarContent>
                 <SidebarMenu>
