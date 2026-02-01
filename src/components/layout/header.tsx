@@ -37,6 +37,7 @@ export default function Header() {
     { href: '/talent', label: 'Encontrar Talentos' },
     { href: '/for-companies', label: 'Para Empresas' },
     { href: '/#how-it-works', label: 'Como Funciona' },
+    { href: '/integrations', label: 'Integrações' },
     { href: '/about', label: 'Sobre Nós' },
   ];
 
