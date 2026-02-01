@@ -10,15 +10,15 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Home, User, Briefcase, Lightbulb, MessageSquare, Settings, Zap, Search, Bell, HelpCircle, Users } from "lucide-react";
+import { Home, User, Briefcase, Lightbulb, MessageSquare, Settings, Zap, Search, Bell, HelpCircle, Users, Lock } from "lucide-react";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { users } from "@/lib/data";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Badge } from "@/components/ui/badge";
 
 const professionalUser = users.find(u => u.role === 'PROFESSIONAL');
 const userAvatar = professionalUser ? PlaceHolderImages.find(p => p.id === professionalUser.avatarUrlId) : null;
@@ -44,17 +44,18 @@ export default function DashboardLayout({
           </div>
 
           <div className="ml-auto flex items-center gap-2 sm:gap-4">
-            <Select defaultValue="free">
-              <SelectTrigger className="w-[120px] hidden sm:flex">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="free">Plano Free</SelectItem>
-                <SelectItem value="starter">Plano Starter</SelectItem>
-                <SelectItem value="business">Plano Business</SelectItem>
-              </SelectContent>
-            </Select>
-            <Button>Atualizar plano</Button>
+            <div className="hidden items-center gap-4 sm:flex">
+                <Badge variant="outline" className="border-destructive text-destructive">
+                    <Lock className="mr-1.5 h-3 w-3" />
+                    Plano Free
+                </Badge>
+                <Button variant="ghost" size="sm" asChild>
+                    <Link href="#">
+                        <Zap className="mr-1.5 h-4 w-4" />
+                        Atualizar plano
+                    </Link>
+                </Button>
+            </div>
             <Button variant="ghost" size="icon" className="rounded-full">
               <Bell className="h-5 w-5" />
               <span className="sr-only">Notificações</span>
