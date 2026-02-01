@@ -59,9 +59,6 @@ export default function Header() {
           <Button variant="ghost" className="text-accent-foreground hover:bg-accent-foreground/10 hover:text-accent-foreground" asChild>
             <Link href="/login">Entrar</Link>
           </Button>
-          <Button asChild>
-            <Link href="/signup">Começar</Link>
-          </Button>
         </div>
 
         <div className="md:hidden">
@@ -85,9 +82,6 @@ export default function Header() {
                 <div className="mt-auto flex flex-col gap-2 border-t border-accent-foreground/20 pt-6">
                    <Button variant="ghost" className="text-accent-foreground justify-start text-lg hover:bg-accent-foreground/10 hover:text-accent-foreground" asChild>
                     <Link href="/login">Entrar</Link>
-                  </Button>
-                  <Button asChild className="w-full text-lg h-12">
-                    <Link href="/signup">Começar</Link>
                   </Button>
                 </div>
               </div>

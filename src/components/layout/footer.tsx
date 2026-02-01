@@ -81,7 +81,7 @@ export default function Footer() {
           <p className="text-accent-foreground/80">&copy; {new Date().getFullYear()} Collabora Inc. Todos os direitos reservados.</p>
           <div className="flex items-center space-x-4 mt-4 sm:mt-0">
              <Button asChild>
-                <Link href="/signup">Comece Agora</Link>
+                <Link href="/login">Login</Link>
              </Button>
           </div>
         </div>
