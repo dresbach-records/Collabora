@@ -70,11 +70,23 @@ export default function TechLabsDashboardPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">986</span><span className="text-sm text-muted-foreground">Ativas</span></div>
-                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">813</span><span className="text-sm text-muted-foreground">Recentes</span></div>
-                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">453</span><span className="text-sm text-muted-foreground">Ativas</span></div>
-                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">112</span><span className="text-sm text-muted-foreground">Pendentes</span></div>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-4">
+              <div>
+                <p className="text-sm text-muted-foreground">Total</p>
+                <p className="text-xl font-bold">986</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Ativas</p>
+                <p className="text-xl font-bold">813</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Recentes</p>
+                <p className="text-xl font-bold">453</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Pendentes</p>
+                <p className="text-xl font-bold">112</p>
+              </div>
             </div>
           </CardContent>
           <CardFooter>
@@ -89,11 +101,23 @@ export default function TechLabsDashboardPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">1,245</span><span className="text-sm text-muted-foreground">Registrados</span></div>
-                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">326</span><span className="text-sm text-muted-foreground">Conectados</span></div>
-                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">326</span><span className="text-sm text-muted-foreground">Incompletos</span></div>
-                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">812</span><span className="text-sm text-muted-foreground">Candidatos</span></div>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-4">
+              <div>
+                <p className="text-sm text-muted-foreground">Registrados</p>
+                <p className="text-xl font-bold">1,245</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Conectados</p>
+                <p className="text-xl font-bold">326</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Incompletos</p>
+                <p className="text-xl font-bold">326</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Candidatos</p>
+                <p className="text-xl font-bold">812</p>
+              </div>
             </div>
           </CardContent>
           <CardFooter>
@@ -108,11 +132,23 @@ export default function TechLabsDashboardPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">1,012</span><span className="text-sm text-muted-foreground">Ativos</span></div>
-                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">2,396</span><span className="text-sm text-muted-foreground">Concluídos</span></div>
-                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">2,339</span><span className="text-sm text-muted-foreground">Em análise</span></div>
-                <div className="flex items-baseline gap-1"><span className="text-2xl font-bold">126</span><span className="text-sm text-muted-foreground">Pendentes</span></div>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-4">
+              <div>
+                <p className="text-sm text-muted-foreground">Ativos</p>
+                <p className="text-xl font-bold">1,012</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Concluídos</p>
+                <p className="text-xl font-bold">2,396</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Em análise</p>
+                <p className="text-xl font-bold">2,339</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Pendentes</p>
+                <p className="text-xl font-bold">126</p>
+              </div>
             </div>
           </CardContent>
           <CardFooter>
