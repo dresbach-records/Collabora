@@ -191,3 +191,4 @@ A Collabora é um marketplace profissional, com:
 *   Base sólida para crescimento
 
 Este README representa a fonte oficial de verdade do sistema.
+# Collabora
