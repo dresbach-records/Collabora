@@ -7,6 +7,7 @@ import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import React from 'react';
 
 const Logo = () => (
   <Link href="/" className="flex items-center gap-2 group mr-6">
@@ -15,13 +16,14 @@ const Logo = () => (
   </Link>
 );
 
-const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+const NavLink = ({ href, children, onLinkClick }: { href: string; children: React.ReactNode; onLinkClick?: () => void }) => {
   const pathname = usePathname();
-  const isActive = pathname === href || (href.startsWith('/#') && pathname === '/');
+  const isActive = pathname === href;
 
   return (
     <Link
       href={href}
+      onClick={onLinkClick}
       className={cn(
         'text-base font-medium text-muted-foreground transition-colors hover:text-foreground',
         isActive && 'text-primary font-semibold'
@@ -33,6 +35,7 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
 };
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const navItems = [
     { href: '/talent', label: 'Encontrar Talentos' },
     { href: '/for-companies', label: 'Para Empresas' },
@@ -62,7 +65,7 @@ export default function Header() {
             </Button>
           </div>
           <div className="md:hidden">
-            <Sheet>
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
                 <SheetTrigger asChild>
                 <Button variant="outline" size="icon">
                     <Menu className="h-5 w-5" />
@@ -74,14 +77,14 @@ export default function Header() {
                     <Logo />
                     <nav className="flex flex-col gap-4">
                     {navItems.map((item) => (
-                        <NavLink key={item.href} href={item.href}>
+                        <NavLink key={item.href} href={item.href} onLinkClick={() => setIsMobileMenuOpen(false)}>
                         {item.label}
                         </NavLink>
                     ))}
                     </nav>
                     <div className="mt-auto flex flex-col gap-4 border-t pt-6">
                         <Button variant="ghost" asChild>
-                            <Link href="/login">Entrar</Link>
+                            <Link href="/login" onClick={() => setIsMobileMenuOpen(false)}>Entrar</Link>
                         </Button>
                     </div>
                 </div>

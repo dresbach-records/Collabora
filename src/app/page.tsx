@@ -49,11 +49,11 @@ const IntegrationsStrip = () => {
         <p className="mx-auto mt-2 max-w-2xl text-lg text-muted-foreground">Conecte suas ferramentas favoritas em um só lugar.</p>
       </div>
       <div
-        className="relative mt-12 w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]"
+        className="relative mt-12 w-full overflow-x-auto pb-4 md:overflow-hidden md:pb-0 md:[mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]"
       >
-        <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
+        <div className="flex w-max justify-start md:animate-scroll md:justify-center md:hover:[animation-play-state:paused]">
           {[...allIntegrations, ...allIntegrations].map((integration, index) => (
-            <div key={index} className="mx-2 flex h-20 w-20 items-center justify-center text-muted-foreground transition-colors hover:text-primary md:mx-4 md:h-24 md:w-24" title={integration.name}>
+            <div key={index} className="mx-4 flex h-16 w-16 items-center justify-center text-muted-foreground transition-colors hover:text-primary md:h-24 md:w-24" title={integration.name}>
               {integration.icon}
             </div>
           ))}
@@ -126,7 +126,7 @@ export default function Home() {
   return (
     <>
       <div className="space-y-20 md:space-y-28">
-        <section className="relative bg-accent text-accent-foreground pt-16 pb-12 md:pt-32 md:pb-28 text-center overflow-hidden">
+        <section className="relative bg-accent text-accent-foreground pt-20 pb-12 md:pt-28 md:pb-28 text-center overflow-hidden">
           {heroImage && (
             <Image
               src={heroImage.imageUrl}
@@ -139,7 +139,7 @@ export default function Home() {
           )}
           <div className="container relative">
             <div className="max-w-3xl mx-auto">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                 Conecte-se com profissionais digitais
               </h1>
               <p className="mx-auto mt-6 max-w-[700px] text-lg text-accent-foreground/80 md:text-xl">
@@ -171,7 +171,7 @@ export default function Home() {
         
         <section className="bg-accent/10 py-12 md:py-20">
             <div className="container">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 text-center">
                     <div>
                         <h2 className="text-3xl font-bold text-primary sm:text-4xl">150,000+</h2>
                         <p className="text-muted-foreground mt-2 sm:text-base">Profissionais digitais disponíveis</p>
