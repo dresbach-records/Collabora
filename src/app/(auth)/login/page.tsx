@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Github, Linkedin } from "lucide-react";
@@ -41,16 +41,16 @@ export default function LoginPage() {
             LinkedIn
           </Button>
         </div>
+        <div className="flex flex-col gap-4 pt-4">
+            <Button className="w-full">Entrar</Button>
+            <p className="text-sm text-center text-muted-foreground">
+              Não tem uma conta?{" "}
+              <Link href="/signup" className="font-medium text-primary hover:underline">
+                Cadastre-se
+              </Link>
+            </p>
+        </div>
       </CardContent>
-      <CardFooter className="flex flex-col gap-4">
-        <Button className="w-full">Entrar</Button>
-        <p className="text-sm text-center text-muted-foreground">
-          Não tem uma conta?{" "}
-          <Link href="/signup" className="font-medium text-primary hover:underline">
-            Cadastre-se
-          </Link>
-        </p>
-      </CardFooter>
     </Card>
   );
 }
