@@ -1,10 +1,11 @@
 import type { User, Company, ProfessionalProfile, Project } from './types';
 
 export const users: User[] = [
-  { id: 'user-1', username: 'alexdoe', email: 'alex.doe@example.com', avatarUrlId: 'profile-avatar-1', role: 'professional' },
-  { id: 'user-2', username: 'innovatech', email: 'contact@innovatech.com', avatarUrlId: 'company-logo-1', role: 'company' },
-  { id: 'user-3', username: 'bobross', email: 'bob.ross@example.com', avatarUrlId: 'profile-avatar-2', role: 'professional' },
-  { id: 'user-4', username: 'designco', email: 'hello@design.co', avatarUrlId: 'company-logo-2', role: 'company' },
+  { id: 'user-0', username: 'admin', email: 'admin@techlabs.com', avatarUrlId: '', role: 'ROLE_SUPER_ADMIN' },
+  { id: 'user-1', username: 'alexdoe', email: 'alex.doe@example.com', avatarUrlId: 'profile-avatar-1', role: 'ROLE_PROFESSIONAL' },
+  { id: 'user-2', username: 'innovatech', email: 'contact@innovatech.com', avatarUrlId: 'company-logo-1', role: 'ROLE_COMPANY' },
+  { id: 'user-3', username: 'bobross', email: 'bob.ross@example.com', avatarUrlId: 'profile-avatar-2', role: 'ROLE_PROFESSIONAL' },
+  { id: 'user-4', username: 'designco', email: 'hello@design.co', avatarUrlId: 'company-logo-2', role: 'ROLE_COMPANY' },
 ];
 
 export const companies: Company[] = [

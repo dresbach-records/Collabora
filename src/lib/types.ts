@@ -3,7 +3,7 @@ export type User = {
   username: string;
   email: string;
   avatarUrlId: string;
-  role: 'professional' | 'company';
+  role: 'ROLE_PROFESSIONAL' | 'ROLE_COMPANY' | 'ROLE_SUPER_ADMIN';
 };
 
 export type ProfessionalProfile = {

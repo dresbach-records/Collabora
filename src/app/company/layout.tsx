@@ -10,7 +10,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Home, User, Briefcase, Lightbulb, MessageSquare, Settings, Zap, Search, Bell, HelpCircle, Users } from "lucide-react";
+import { Home, MessageSquare, Settings, Zap, Search, Bell, HelpCircle, Building2, FolderKanban, Users, UserSearch } from "lucide-react";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { users } from "@/lib/data";
@@ -20,10 +20,10 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
-const professionalUser = users.find(u => u.role === 'ROLE_PROFESSIONAL');
-const userAvatar = professionalUser ? PlaceHolderImages.find(p => p.id === professionalUser.avatarUrlId) : null;
+const companyUser = users.find(u => u.role === 'ROLE_COMPANY');
+const userAvatar = companyUser ? PlaceHolderImages.find(p => p.id === companyUser.avatarUrlId) : null;
 
-export default function DashboardLayout({
+export default function CompanyLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -33,7 +33,7 @@ export default function DashboardLayout({
       <Sidebar>
         <SidebarHeader>
           <div className="flex items-center gap-2">
-            <Link href="/dashboard" className="flex items-center gap-2">
+            <Link href="/company" className="flex items-center gap-2">
               <Image src="/iconecolabora.ico" alt="Collabora icon" width={28} height={28} />
               <span className="text-2xl font-bold text-sidebar-foreground">Collabora</span>
             </Link>
@@ -42,27 +42,21 @@ export default function DashboardLayout({
         <SidebarContent>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton href="/dashboard" tooltip="Dashboard" isActive>
+                <SidebarMenuButton href="/company" tooltip="Dashboard" isActive>
                   <Home />
                   <span>Dashboard</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton href={`/profile/${professionalUser?.username}`} tooltip="Meu Perfil">
-                  <User />
-                  <span>Meu Perfil</span>
+                <SidebarMenuButton href="#" tooltip="Minha Empresa">
+                  <Building2 />
+                  <span>Minha Empresa</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton href="#" tooltip="Portfólio">
-                  <Briefcase />
-                  <span>Portfólio</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton href="#" tooltip="Oportunidades">
-                  <Lightbulb />
-                  <span>Oportunidades</span>
+                <SidebarMenuButton href="#" tooltip="Meus Projetos">
+                  <FolderKanban />
+                  <span>Meus Projetos</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
@@ -72,15 +66,15 @@ export default function DashboardLayout({
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton href="/dashboard/messages" tooltip="Mensagens">
+                <SidebarMenuButton href="#" tooltip="Mensagens">
                   <MessageSquare />
                   <span>Mensagens</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton href="/dashboard/settings" tooltip="Configurações">
-                  <Settings />
-                  <span>Configurações</span>
+                <SidebarMenuButton href="#" tooltip="Profissionais">
+                  <UserSearch />
+                  <span>Profissionais</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
@@ -100,7 +94,7 @@ export default function DashboardLayout({
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Buscar projetos ou empresas"
+              placeholder={"Buscar profissionais..."}
               className="w-full rounded-lg bg-secondary pl-8 md:w-[200px] lg:w-[320px]"
             />
           </div>
@@ -129,8 +123,8 @@ export default function DashboardLayout({
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon" className="rounded-full">
                   <Avatar className="h-8 w-8">
-                    {userAvatar && professionalUser && <AvatarImage src={userAvatar.imageUrl} alt={professionalUser.username} />}
-                    <AvatarFallback>{professionalUser?.username.charAt(0).toUpperCase()}</AvatarFallback>
+                    {userAvatar && companyUser && <AvatarImage src={userAvatar.imageUrl} alt={companyUser.username} />}
+                    <AvatarFallback>{companyUser?.username.charAt(0).toUpperCase()}</AvatarFallback>
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>

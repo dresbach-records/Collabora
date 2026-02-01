@@ -163,6 +163,8 @@ export default function SignupPage() {
     const handleNext = () => setStep(s => Math.min(s + 1, totalSteps));
     const handleBack = () => setStep(s => Math.max(s - 1, 0));
 
+    const finalRedirectPath = role === 'professional' ? '/dashboard' : '/company';
+
     const renderStepContent = () => {
         if (step === 0) {
             return (
@@ -243,7 +245,7 @@ export default function SignupPage() {
                             <Button className="w-full" onClick={handleNext}>Continuar</Button>
                         ) : (
                             <Button className="w-full" asChild>
-                                <Link href="/dashboard">Finalizar cadastro</Link>
+                                <Link href={finalRedirectPath}>Finalizar cadastro</Link>
                             </Button>
                         )}
                     </div>
