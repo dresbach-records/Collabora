@@ -3,9 +3,10 @@ import Link from 'next/link';
 import { Button } from '../ui/button';
 
 const Logo = () => (
-  <Link href="/" className="flex items-center gap-2 text-xl font-semibold group">
-    <Image src="/logo.png" alt="Collabora logo" width={120} height={32} className="invert" />
-  </Link>
+    <Link href="/" className="flex items-center gap-2 group">
+        <Image src="/iconecolabora.ico" alt="Collabora icon" width={28} height={28} />
+        <span className="text-2xl font-bold text-accent-foreground">Collabora</span>
+    </Link>
 );
 
 export default function Footer() {
