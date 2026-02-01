@@ -1,3 +1,5 @@
+'use client';
+
 import {
   SidebarProvider,
   Sidebar,
@@ -8,9 +10,30 @@ import {
   SidebarMenuButton,
   SidebarInset,
   SidebarTrigger,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
+  SidebarMenuSubButton,
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Home, MessageSquare, Settings, Zap, Search, Bell, HelpCircle, Building2, FolderKanban, Users, UserSearch, Lock } from "lucide-react";
+import { 
+  Home, 
+  MessageSquare, 
+  Settings, 
+  Zap, 
+  Search, 
+  Bell, 
+  HelpCircle, 
+  Building2, 
+  FolderKanban, 
+  Users, 
+  Lock,
+  Mail,
+  Star,
+  BarChart2,
+  CreditCard,
+  ChevronDown,
+  ChevronRight
+} from "lucide-react";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { users } from "@/lib/data";
@@ -19,6 +42,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { usePathname } from "next/navigation";
 
 const companyUser = users.find(u => u.role === 'COMPANY');
 const userAvatar = companyUser ? PlaceHolderImages.find(p => p.id === companyUser.avatarUrlId) : null;
@@ -28,6 +53,8 @@ export default function CompanyLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+
   return (
     <SidebarProvider>
       <div className="flex h-screen flex-col bg-background">
@@ -102,47 +129,144 @@ export default function CompanyLayout({
             <SidebarContent>
                 <SidebarMenu>
                   <SidebarMenuItem>
-                    <SidebarMenuButton href="/company" tooltip="Dashboard" isActive>
+                    <SidebarMenuButton href="/company" tooltip="Dashboard" isActive={pathname === '/company'}>
                       <Home />
                       <span>Dashboard</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton href="#" tooltip="Minha Empresa">
-                      <Building2 />
-                      <span>Minha Empresa</span>
-                    </SidebarMenuButton>
+
+                   <SidebarMenuItem asChild>
+                    <Collapsible>
+                      <CollapsibleTrigger className="w-full">
+                        <SidebarMenuButton tooltip="Projetos">
+                          <FolderKanban />
+                          <span>Projetos</span>
+                          <ChevronDown className="ml-auto h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-180" />
+                        </SidebarMenuButton>
+                      </CollapsibleTrigger>
+                      <CollapsibleContent>
+                        <SidebarMenuSub>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="#">Criar novo projeto</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="#">Projetos ativos</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="#">Projetos em análise</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="#">Projetos finalizados</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="#">Projetos cancelados</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem asChild>
+                            <Collapsible>
+                              <CollapsibleTrigger asChild>
+                                <SidebarMenuSubButton className="justify-between">
+                                  <span>Por categoria</span>
+                                  <ChevronRight className="h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-90" />
+                                </SidebarMenuSubButton>
+                              </CollapsibleTrigger>
+                              <CollapsibleContent>
+                                <SidebarMenuSub className="ml-4">
+                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#">Desenvolvimento</SidebarMenuSubButton></SidebarMenuSubItem>
+                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#">Design</SidebarMenuSubButton></SidebarMenuSubItem>
+                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#">Vídeo</SidebarMenuSubButton></SidebarMenuSubItem>
+                                </SidebarMenuSub>
+                              </CollapsibleContent>
+                            </Collapsible>
+                          </SidebarMenuSubItem>
+                        </SidebarMenuSub>
+                      </CollapsibleContent>
+                    </Collapsible>
                   </SidebarMenuItem>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton href="#" tooltip="Meus Projetos">
-                      <FolderKanban />
-                      <span>Meus Projetos</span>
-                    </SidebarMenuButton>
+
+                  <SidebarMenuItem asChild>
+                    <Collapsible>
+                      <CollapsibleTrigger className="w-full">
+                        <SidebarMenuButton tooltip="Profissionais">
+                          <Users />
+                          <span>Profissionais</span>
+                          <ChevronDown className="ml-auto h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-180" />
+                        </SidebarMenuButton>
+                      </CollapsibleTrigger>
+                      <CollapsibleContent>
+                        <SidebarMenuSub>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="#">Buscar profissionais</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="#">Profissionais salvos</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="#">Profissionais convidados</SidebarMenuSubButton></SidebarMenuSubItem>
+                        </SidebarMenuSub>
+                      </CollapsibleContent>
+                    </Collapsible>
                   </SidebarMenuItem>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton href="#" tooltip="Candidaturas">
-                      <Users />
-                      <span>Candidaturas</span>
-                    </SidebarMenuButton>
+                  
+                  <SidebarMenuItem asChild>
+                    <Collapsible>
+                      <CollapsibleTrigger className="w-full">
+                        <SidebarMenuButton tooltip="Candidaturas">
+                          <Mail />
+                          <span>Candidaturas</span>
+                          <ChevronDown className="ml-auto h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-180" />
+                        </SidebarMenuButton>
+                      </CollapsibleTrigger>
+                      <CollapsibleContent>
+                        <SidebarMenuSub>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="#">Recebidas</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="#">Em análise</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="#">Aprovadas</SidebarMenuSubButton></SidebarMenuSubItem>
+                        </SidebarMenuSub>
+                      </CollapsibleContent>
+                    </Collapsible>
                   </SidebarMenuItem>
+
                   <SidebarMenuItem>
                     <SidebarMenuButton href="#" tooltip="Mensagens">
                       <MessageSquare />
                       <span>Mensagens</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
+                  
                   <SidebarMenuItem>
-                    <SidebarMenuButton href="#" tooltip="Profissionais">
-                      <UserSearch />
-                      <span>Profissionais</span>
+                    <SidebarMenuButton href="#" tooltip="Avaliações">
+                      <Star />
+                      <span>Avaliações</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
+
                   <SidebarMenuItem>
-                    <SidebarMenuButton href="#" tooltip="Atualizar Plano">
-                      <Zap />
-                      <span>Atualizar Plano</span>
+                    <SidebarMenuButton href="#" tooltip="Relatórios">
+                      <BarChart2 />
+                      <span>Relatórios</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
+
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Página da Empresa">
+                      <Building2 />
+                      <span>Página da Empresa</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Plano & Faturamento">
+                      <CreditCard />
+                      <span>Plano & Faturamento</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Notificações">
+                      <Bell />
+                      <span>Notificações</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Configurações">
+                      <Settings />
+                      <span>Configurações</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                  
+                  <SidebarMenuItem>
+                    <SidebarMenuButton href="#" tooltip="Ajuda & Suporte">
+                      <HelpCircle />
+                      <span>Ajuda & Suporte</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+
                 </SidebarMenu>
             </SidebarContent>
           </Sidebar>
