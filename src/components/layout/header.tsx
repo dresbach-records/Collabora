@@ -3,14 +3,14 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Shapes } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const Logo = () => (
   <Link href="/" className="flex items-center gap-2 text-xl font-semibold group">
-    <Shapes className="h-6 w-6 text-primary transition-colors group-hover:text-primary/80" />
-    <span className="font-headline text-accent-foreground">Collabora</span>
+    <Image src="/logo.png" alt="Collabora logo" width={120} height={32} />
   </Link>
 );
 

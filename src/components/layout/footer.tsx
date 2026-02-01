@@ -1,11 +1,10 @@
-import { Shapes } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '../ui/button';
 
 const Logo = () => (
   <Link href="/" className="flex items-center gap-2 text-xl font-semibold group">
-    <Shapes className="h-6 w-6 text-primary transition-colors group-hover:text-primary/80" />
-    <span className="font-headline text-accent-foreground">Collabora</span>
+    <Image src="/logo.png" alt="Collabora logo" width={120} height={32} />
   </Link>
 );
 

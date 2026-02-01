@@ -13,10 +13,11 @@ import {
   SidebarGroupLabel,
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Home, Briefcase, MessageSquare, User, Settings, LogOut, PlusCircle, Shapes } from "lucide-react";
+import { Home, Briefcase, MessageSquare, User, Settings, LogOut, PlusCircle } from "lucide-react";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { users } from "@/lib/data";
+import Image from "next/image";
 
 const user = users[0];
 const userAvatar = PlaceHolderImages.find(p => p.id === user.avatarUrlId);
@@ -31,8 +32,9 @@ export default function DashboardLayout({
       <Sidebar>
         <SidebarHeader>
           <div className="flex items-center gap-2">
-            <Shapes className="size-8 text-primary" />
-            <h1 className="text-xl font-headline font-semibold">Collabora</h1>
+            <Link href="/dashboard">
+              <Image src="/logo.png" alt="Collabora logo" width={120} height={32} />
+            </Link>
           </div>
         </SidebarHeader>
         <SidebarContent>
