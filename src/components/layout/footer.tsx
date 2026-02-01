@@ -80,7 +80,7 @@ export default function Footer() {
         <div className="mt-12 border-t pt-8 flex flex-col items-center justify-center gap-4">
           <p className="text-muted-foreground text-center">&copy; {new Date().getFullYear()} Collabora Inc. Todos os direitos reservados.</p>
           <Link href="https://www.asaas.com/c/6lzxqhhn6ja2yx9p" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80">
-              <Image src="/buy me cofe.ico" alt="Apoiar o projeto" width={36} height={36} />
+              <Image src="/buy me cofe.ico" alt="Apoiar o projeto" width={108} height={108} />
           </Link>
         </div>
       </div>
