@@ -35,6 +35,7 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
 export default function Header() {
   const navItems = [
     { href: '/talent', label: 'Encontrar Talentos' },
+    { href: '/for-companies', label: 'Para Empresas' },
     { href: '/#how-it-works', label: 'Como Funciona' },
     { href: '/about', label: 'Sobre Nós' },
   ];

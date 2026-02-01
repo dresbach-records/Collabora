@@ -14,6 +14,7 @@ export default function Footer() {
     platform: [
       { name: 'Encontrar Talentos', href: '/talent' },
       { name: 'Encontrar Projetos', href: '/projects' },
+      { name: 'Para Empresas', href: '/for-companies' },
       { name: 'Como Funciona', href: '/#how-it-works' },
     ],
     company: [
