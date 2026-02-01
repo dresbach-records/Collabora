@@ -79,9 +79,8 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t pt-8 flex flex-col items-center justify-center gap-4">
           <p className="text-muted-foreground text-center">&copy; {new Date().getFullYear()} Collabora Inc. Todos os direitos reservados.</p>
-          <Link href="https://www.asaas.com/c/6lzxqhhn6ja2yx9p" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-              <Image src="/buy me cofe.ico" alt="Apoiar o projeto" width={20} height={20} />
-              <span>Apoiar o projeto</span>
+          <Link href="https://www.asaas.com/c/6lzxqhhn6ja2yx9p" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80">
+              <Image src="/buy me cofe.ico" alt="Apoiar o projeto" width={28} height={28} />
           </Link>
         </div>
       </div>
