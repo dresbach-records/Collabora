@@ -43,16 +43,6 @@ export default function TechLabsDashboardLayout({
             />
           </div>
           <div className="ml-auto flex items-center gap-3 sm:gap-4">
-            <Select defaultValue="pre">
-              <SelectTrigger className="w-[120px] hidden sm:flex border-none text-muted-foreground">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="pre">Plano Pre</SelectItem>
-                <SelectItem value="pro">Plano Pro</SelectItem>
-              </SelectContent>
-            </Select>
-            <Button className="bg-[#F97316] hover:bg-[#F97316]/90 text-white">Atualizar plano</Button>
             <Button variant="ghost" size="icon" className="rounded-full text-muted-foreground">
               <Bell className="h-5 w-5" />
               <span className="sr-only">Notificações</span>
@@ -136,7 +126,7 @@ export default function TechLabsDashboardLayout({
             </SidebarContent>
           </Sidebar>
           <SidebarInset className="bg-[#F3F4F6] p-0">
-            <div className="flex-1 overflow-auto">
+            <div className="flex-1 overflow-auto p-6">
               {children}
             </div>
           </SidebarInset>
