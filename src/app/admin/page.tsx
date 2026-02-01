@@ -58,7 +58,7 @@ export default function AdminDashboardPage() {
     <div className="flex flex-col gap-6 text-[#2D323C]">
       <div>
         <h1 className="text-2xl font-bold">Dashboard da Tech Labs</h1>
-        <p className="text-muted-foreground">Voce controla a plataformare de taletos da Tech Labs.</p>
+        <p className="text-muted-foreground">Você controla a plataforma de talentos da Tech Labs.</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -210,7 +210,7 @@ export default function AdminDashboardPage() {
                                 </div>
                             </div>
                              <div className="text-right flex items-center gap-2">
-                                {company.name === 'Techmadas' && (
+                                {company.status === 'Ativa' && (
                                     <>
                                         <div className="text-right">
                                             <Badge className="bg-green-100 text-green-700 hover:bg-green-100 font-medium">Ativa</Badge>
@@ -219,8 +219,8 @@ export default function AdminDashboardPage() {
                                         <Button size="sm" className="bg-orange-500 text-white h-8 hover:bg-orange-600">Gerenciar</Button>
                                     </>
                                 )}
-                                {company.status === 'Pendente' && <Button variant="outline" size="sm" className="h-8">Convidar</Button>}
-                                {company.status === 'Convidar' && <Button variant="outline" size="sm" className="h-8">Convidar</Button>}
+                                {company.status === 'Pendente' && <Button size="sm" className="bg-orange-500 text-white h-8 hover:bg-orange-600">Analisar</Button>}
+                                {company.status === 'Convidar' && <Button size="sm" className="bg-orange-500 text-white h-8 hover:bg-orange-600">Analisar</Button>}
                             </div>
                         </div>
                    ))}
