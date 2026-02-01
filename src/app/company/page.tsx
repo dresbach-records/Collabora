@@ -84,17 +84,31 @@ export default function CompanyDashboardPage() {
                         <CardDescription>Gerencie seus projetos e veja as candidaturas.</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        {/* Mobile view: List */}
-                        <div className="space-y-4 md:hidden">
+                        {/* Mobile view: Card List */}
+                        <div className="space-y-6 md:hidden">
                             {activeProjects.map((project) => (
-                                <div key={project.id} className="rounded-lg border p-4">
-                                    <div className="flex justify-between items-start">
-                                        <div className="font-medium">{project.title}</div>
-                                        <Badge variant={project.status === 'Em andamento' ? 'default' : 'secondary'} className="shrink-0">{project.status}</Badge>
-                                    </div>
-                                    <div className="mt-2 text-sm text-muted-foreground">Orçamento: {project.budget}</div>
-                                    <div className="mt-1 text-sm text-muted-foreground">{project.applicants} candidaturas</div>
-                                </div>
+                                <Card key={project.id} className="shadow-md">
+                                    <CardHeader className="pb-3">
+                                        <div className="flex items-start justify-between gap-4">
+                                            <CardTitle className="text-base font-bold">{project.title}</CardTitle>
+                                            <Badge variant={project.status === 'Em andamento' ? 'default' : 'secondary'} className="shrink-0">{project.status}</Badge>
+                                        </div>
+                                    </CardHeader>
+                                    <CardContent className="grid grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <p className="text-muted-foreground">Orçamento</p>
+                                            <p className="font-semibold">{project.budget}</p>
+                                        </div>
+                                        <div>
+                                            <p className="text-muted-foreground">Candidaturas</p>
+                                            <p className="font-semibold">{project.applicants}</p>
+                                        </div>
+                                    </CardContent>
+                                    <CardFooter className="flex gap-2">
+                                        <Button variant="outline" size="sm" className="w-full">Ver Candidatos</Button>
+                                        <Button size="sm" className="w-full">Gerenciar Projeto</Button>
+                                    </CardFooter>
+                                </Card>
                             ))}
                         </div>
 
