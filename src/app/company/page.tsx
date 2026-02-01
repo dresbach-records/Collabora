@@ -84,30 +84,47 @@ export default function CompanyDashboardPage() {
                         <CardDescription>Gerencie seus projetos e veja as candidaturas.</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <Table>
-                            <TableHeader>
-                                <TableRow>
-                                    <TableHead>Projeto</TableHead>
-                                    <TableHead className="text-center">Status</TableHead>
-                                    <TableHead className="text-center">Candidaturas</TableHead>
-                                    <TableHead className="text-right">Orçamento</TableHead>
-                                </TableRow>
-                            </TableHeader>
-                            <TableBody>
-                                {activeProjects.map((project) => (
-                                    <TableRow key={project.id}>
-                                        <TableCell>
-                                            <div className="font-medium">{project.title}</div>
-                                        </TableCell>
-                                        <TableCell className="text-center">
-                                            <Badge variant={project.status === 'Em andamento' ? 'default' : 'secondary'}>{project.status}</Badge>
-                                        </TableCell>
-                                        <TableCell className="text-center">{project.applicants}</TableCell>
-                                        <TableCell className="text-right">{project.budget}</TableCell>
+                        {/* Mobile view: List */}
+                        <div className="space-y-4 md:hidden">
+                            {activeProjects.map((project) => (
+                                <div key={project.id} className="rounded-lg border p-4">
+                                    <div className="flex justify-between items-start">
+                                        <div className="font-medium">{project.title}</div>
+                                        <Badge variant={project.status === 'Em andamento' ? 'default' : 'secondary'} className="shrink-0">{project.status}</Badge>
+                                    </div>
+                                    <div className="mt-2 text-sm text-muted-foreground">Orçamento: {project.budget}</div>
+                                    <div className="mt-1 text-sm text-muted-foreground">{project.applicants} candidaturas</div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Desktop view: Table */}
+                        <div className="hidden md:block">
+                            <Table>
+                                <TableHeader>
+                                    <TableRow>
+                                        <TableHead>Projeto</TableHead>
+                                        <TableHead className="text-center">Status</TableHead>
+                                        <TableHead className="text-center">Candidaturas</TableHead>
+                                        <TableHead className="text-right">Orçamento</TableHead>
                                     </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
+                                </TableHeader>
+                                <TableBody>
+                                    {activeProjects.map((project) => (
+                                        <TableRow key={project.id}>
+                                            <TableCell>
+                                                <div className="font-medium">{project.title}</div>
+                                            </TableCell>
+                                            <TableCell className="text-center">
+                                                <Badge variant={project.status === 'Em andamento' ? 'default' : 'secondary'}>{project.status}</Badge>
+                                            </TableCell>
+                                            <TableCell className="text-center">{project.applicants}</TableCell>
+                                            <TableCell className="text-right">{project.budget}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </div>
                     </CardContent>
                 </Card>
 
