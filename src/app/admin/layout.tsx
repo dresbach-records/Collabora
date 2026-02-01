@@ -60,7 +60,7 @@ export default function AdminLayout({
           </div>
         </header>
 
-        <div className="flex flex-1 overflow-hidden">
+        <div className="relative flex flex-1 overflow-hidden">
           <Sidebar>
             <SidebarHeader>
               <div className="flex items-center gap-2">
