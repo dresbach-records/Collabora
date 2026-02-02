@@ -15,24 +15,19 @@ import {
     Users, 
     Briefcase, 
     Settings, 
-    BarChart2 as BarChart, 
+    BarChart, 
     Shield, 
     LogOut,
     FolderKanban,
     Package,
-    MessageSquare,
     CreditCard,
     UserCog,
     HelpCircle,
     Gavel,
-    Bell,
     ChevronDown,
-    ChevronRight,
-    Puzzle
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import Link from "next/link";
 
 export default function AdminSidebar() {
     const pathname = usePathname();
@@ -55,7 +50,6 @@ export default function AdminSidebar() {
                     </SidebarMenuButton>
                   </SidebarMenuItem>
 
-                  {/* Empresas */}
                   <SidebarMenuItem asChild>
                     <Collapsible>
                       <CollapsibleTrigger className="w-full">
@@ -67,52 +61,14 @@ export default function AdminSidebar() {
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <SidebarMenuSub className="border-l-white/20">
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Todas as empresas</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Empresas ativas</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Empresas pendentes</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Empresas bloqueadas</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem asChild>
-                            <Collapsible>
-                              <CollapsibleTrigger asChild>
-                                <SidebarMenuSubButton className={`${subMenuButtonClass} justify-between`}>
-                                  <span>Gestão</span>
-                                  <ChevronRight className="h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-90" />
-                                </SidebarMenuSubButton>
-                              </CollapsibleTrigger>
-                              <CollapsibleContent>
-                                <SidebarMenuSub className="ml-4 border-l-white/20">
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Aprovar empresa</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Editar dados</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Alterar plano</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Bloquear / desbloquear</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Encerrar conta</SidebarMenuSubButton></SidebarMenuSubItem>
-                                </SidebarMenuSub>
-                              </CollapsibleContent>
-                            </Collapsible>
-                          </SidebarMenuSubItem>
-                          <SidebarMenuSubItem asChild>
-                            <Collapsible>
-                              <CollapsibleTrigger asChild>
-                                <SidebarMenuSubButton className={`${subMenuButtonClass} justify-between`}>
-                                  <span>Análises</span>
-                                  <ChevronRight className="h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-90" />
-                                </SidebarMenuSubButton>
-                              </CollapsibleTrigger>
-                              <CollapsibleContent>
-                                <SidebarMenuSub className="ml-4 border-l-white/20">
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Empresas por plano</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Empresas mais ativas</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Taxa de conversão</SidebarMenuSubButton></SidebarMenuSubItem>
-                                </SidebarMenuSub>
-                              </CollapsibleContent>
-                            </Collapsible>
-                          </SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/companies/list" className={subMenuButtonClass}>Listar Empresas</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/companies/pending" className={subMenuButtonClass}>Empresas Pendentes</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/companies/blocked" className={subMenuButtonClass}>Empresas Bloqueadas</SidebarMenuSubButton></SidebarMenuSubItem>
                         </SidebarMenuSub>
                       </CollapsibleContent>
                     </Collapsible>
                   </SidebarMenuItem>
                   
-                  {/* Profissionais */}
                   <SidebarMenuItem asChild>
                     <Collapsible>
                       <CollapsibleTrigger className="w-full">
@@ -124,51 +80,13 @@ export default function AdminSidebar() {
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <SidebarMenuSub className="border-l-white/20">
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Todos os profissionais</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Perfis ativos</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Perfis incompletos</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Perfis bloqueados</SidebarMenuSubButton></SidebarMenuSubItem>
-                           <SidebarMenuSubItem asChild>
-                            <Collapsible>
-                              <CollapsibleTrigger asChild>
-                                <SidebarMenuSubButton className={`${subMenuButtonClass} justify-between`}>
-                                  <span>Gestão</span>
-                                  <ChevronRight className="h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-90" />
-                                </SidebarMenuSubButton>
-                              </CollapsibleTrigger>
-                              <CollapsibleContent>
-                                <SidebarMenuSub className="ml-4 border-l-white/20">
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Ver perfil</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Ver portfólio</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Editar dados</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Bloquear / desbloquear</SidebarMenuSubButton></SidebarMenuSubItem>
-                                </SidebarMenuSub>
-                              </CollapsibleContent>
-                            </Collapsible>
-                          </SidebarMenuSubItem>
-                          <SidebarMenuSubItem asChild>
-                            <Collapsible>
-                              <CollapsibleTrigger asChild>
-                                <SidebarMenuSubButton className={`${subMenuButtonClass} justify-between`}>
-                                  <span>Qualidade</span>
-                                  <ChevronRight className="h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-90" />
-                                </SidebarMenuSubButton>
-                              </CollapsibleTrigger>
-                              <CollapsibleContent>
-                                <SidebarMenuSub className="ml-4 border-l-white/20">
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Perfis denunciados</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Avaliações negativas</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Perfis verificados</SidebarMenuSubButton></SidebarMenuSubItem>
-                                </SidebarMenuSub>
-                              </CollapsibleContent>
-                            </Collapsible>
-                          </SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/professionals/list" className={subMenuButtonClass}>Listar Profissionais</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/professionals/flagged" className={subMenuButtonClass}>Perfis Sinalizados</SidebarMenuSubButton></SidebarMenuSubItem>
                         </SidebarMenuSub>
                       </CollapsibleContent>
                     </Collapsible>
                   </SidebarMenuItem>
                   
-                  {/* Projetos */}
                   <SidebarMenuItem asChild>
                     <Collapsible>
                       <CollapsibleTrigger className="w-full">
@@ -180,34 +98,13 @@ export default function AdminSidebar() {
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <SidebarMenuSub className="border-l-white/20">
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Todos os projetos</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Projetos ativos</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Projetos encerrados</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Projetos denunciados</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem asChild>
-                            <Collapsible>
-                              <CollapsibleTrigger asChild>
-                                <SidebarMenuSubButton className={`${subMenuButtonClass} justify-between`}>
-                                  <span>Moderação</span>
-                                  <ChevronRight className="h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-90" />
-                                </SidebarMenuSubButton>
-                              </CollapsibleTrigger>
-                              <CollapsibleContent>
-                                <SidebarMenuSub className="ml-4 border-l-white/20">
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Revisar projeto</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Aprovar / reprovar</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Encerrar projeto</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Excluir projeto</SidebarMenuSubButton></SidebarMenuSubItem>
-                                </SidebarMenuSub>
-                              </CollapsibleContent>
-                            </Collapsible>
-                          </SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/projects/all" className={subMenuButtonClass}>Todos os Projetos</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/projects/reported" className={subMenuButtonClass}>Projetos Denunciados</SidebarMenuSubButton></SidebarMenuSubItem>
                         </SidebarMenuSub>
                       </CollapsibleContent>
                     </Collapsible>
                   </SidebarMenuItem>
 
-                   {/* Serviços (Profissionais) */}
                    <SidebarMenuItem asChild>
                     <Collapsible>
                       <CollapsibleTrigger className="w-full">
@@ -219,53 +116,12 @@ export default function AdminSidebar() {
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <SidebarMenuSub className="border-l-white/20">
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Todos os serviços</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Serviços ativos</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Serviços pausados</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Serviços denunciados</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem asChild>
-                            <Collapsible>
-                              <CollapsibleTrigger asChild>
-                                <SidebarMenuSubButton className={`${subMenuButtonClass} justify-between`}>
-                                  <span>Controle</span>
-                                  <ChevronRight className="h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-90" />
-                                </SidebarMenuSubButton>
-                              </CollapsibleTrigger>
-                              <CollapsibleContent>
-                                <SidebarMenuSub className="ml-4 border-l-white/20">
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Aprovar serviço</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Editar conteúdo</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Remover serviço</SidebarMenuSubButton></SidebarMenuSubItem>
-                                </SidebarMenuSub>
-                              </CollapsibleContent>
-                            </Collapsible>
-                          </SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/services/moderation" className={subMenuButtonClass}>Moderação de Serviços</SidebarMenuSubButton></SidebarMenuSubItem>
                         </SidebarMenuSub>
                       </CollapsibleContent>
                     </Collapsible>
                   </SidebarMenuItem>
                   
-                  {/* Mensagens */}
-                  <SidebarMenuItem asChild>
-                    <Collapsible>
-                      <CollapsibleTrigger className="w-full">
-                        <SidebarMenuButton tooltip="Mensagens" className={menuButtonClass}>
-                          <MessageSquare />
-                          <span>Mensagens</span>
-                          <ChevronDown className="ml-auto h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-180" />
-                        </SidebarMenuButton>
-                      </CollapsibleTrigger>
-                      <CollapsibleContent>
-                        <SidebarMenuSub className="border-l-white/20">
-                           <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Conversas monitoradas</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Mensagens denunciadas</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Logs de comunicação</SidebarMenuSubButton></SidebarMenuSubItem>
-                        </SidebarMenuSub>
-                      </CollapsibleContent>
-                    </Collapsible>
-                  </SidebarMenuItem>
-
-                  {/* Moderação */}
                   <SidebarMenuItem asChild>
                     <Collapsible>
                       <CollapsibleTrigger className="w-full">
@@ -277,126 +133,50 @@ export default function AdminSidebar() {
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <SidebarMenuSub className="border-l-white/20">
-                           <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Denúncias recebidas</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Conteúdo sinalizado</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Usuários reincidentes</SidebarMenuSubButton></SidebarMenuSubItem>
-                           <SidebarMenuSubItem asChild>
-                            <Collapsible>
-                              <CollapsibleTrigger asChild>
-                                <SidebarMenuSubButton className={`${subMenuButtonClass} justify-between`}>
-                                  <span>Ações</span>
-                                  <ChevronRight className="h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-90" />
-                                </SidebarMenuSubButton>
-                              </CollapsibleTrigger>
-                              <CollapsibleContent>
-                                <SidebarMenuSub className="ml-4 border-l-white/20">
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Advertir usuário</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Bloquear temporariamente</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Banimento permanente</SidebarMenuSubButton></SidebarMenuSubItem>
-                                </SidebarMenuSub>
-                              </CollapsibleContent>
-                            </Collapsible>
-                          </SidebarMenuSubItem>
+                           <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/moderation/reports" className={subMenuButtonClass}>Denúncias</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/moderation/actions" className={subMenuButtonClass}>Ações</SidebarMenuSubButton></SidebarMenuSubItem>
                         </SidebarMenuSub>
                       </CollapsibleContent>
                     </Collapsible>
                   </SidebarMenuItem>
                   
-                  {/* Planos & Pagamentos */}
                   <SidebarMenuItem asChild>
                     <Collapsible>
                       <CollapsibleTrigger className="w-full">
-                        <SidebarMenuButton tooltip="Planos & Pagamentos" className={menuButtonClass}>
+                        <SidebarMenuButton tooltip="Pagamentos" className={menuButtonClass}>
                           <CreditCard />
-                          <span>Planos & Pagamentos</span>
+                          <span>Pagamentos</span>
                           <ChevronDown className="ml-auto h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-180" />
                         </SidebarMenuButton>
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <SidebarMenuSub className="border-l-white/20">
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Visão geral financeira</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Assinaturas ativas</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Receita mensal (MRR)</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Histórico de pagamentos</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem asChild>
-                            <Collapsible>
-                              <CollapsibleTrigger asChild>
-                                <SidebarMenuSubButton className={`${subMenuButtonClass} justify-between`}>
-                                  <span>Planos</span>
-                                  <ChevronRight className="h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-90" />
-                                </SidebarMenuSubButton>
-                              </CollapsibleTrigger>
-                              <CollapsibleContent>
-                                <SidebarMenuSub className="ml-4 border-l-white/20">
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Criar plano</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Editar plano</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Ativar / desativar plano</SidebarMenuSubButton></SidebarMenuSubItem>
-                                </SidebarMenuSub>
-                              </CollapsibleContent>
-                            </Collapsible>
-                          </SidebarMenuSubItem>
-                          <SidebarMenuSubItem asChild>
-                            <Collapsible>
-                              <CollapsibleTrigger asChild>
-                                <SidebarMenuSubButton className={`${subMenuButtonClass} justify-between`}>
-                                  <span>Financeiro</span>
-                                  <ChevronRight className="h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-90" />
-                                </SidebarMenuSubButton>
-                              </CollapsibleTrigger>
-                              <CollapsibleContent>
-                                <SidebarMenuSub className="ml-4 border-l-white/20">
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Relatórios</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Exportar dados</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Integração de pagamentos</SidebarMenuSubButton></SidebarMenuSubItem>
-                                </SidebarMenuSub>
-                              </CollapsibleContent>
-                            </Collapsible>
-                          </SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/payments/overview" className={subMenuButtonClass}>Visão Geral</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/payments/subscriptions" className={subMenuButtonClass}>Assinaturas</SidebarMenuSubButton></SidebarMenuSubItem>
                         </SidebarMenuSub>
                       </CollapsibleContent>
                     </Collapsible>
                   </SidebarMenuItem>
 
-                   {/* Estatísticas & BI */}
                   <SidebarMenuItem asChild>
                     <Collapsible>
                       <CollapsibleTrigger className="w-full">
-                        <SidebarMenuButton tooltip="Estatísticas & BI" className={menuButtonClass}>
+                        <SidebarMenuButton tooltip="Analytics" className={menuButtonClass}>
                           <BarChart />
-                          <span>Estatísticas & BI</span>
+                          <span>Analytics</span>
                           <ChevronDown className="ml-auto h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-180" />
                         </SidebarMenuButton>
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <SidebarMenuSub className="border-l-white/20">
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Crescimento da plataforma</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Novos usuários</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Projetos criados</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Conversões Free → Pago</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Churn</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem asChild>
-                            <Collapsible>
-                              <CollapsibleTrigger asChild>
-                                <SidebarMenuSubButton className={`${subMenuButtonClass} justify-between`}>
-                                  <span>Filtros</span>
-                                  <ChevronRight className="h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-90" />
-                                </SidebarMenuSubButton>
-                              </CollapsibleTrigger>
-                              <CollapsibleContent>
-                                <SidebarMenuSub className="ml-4 border-l-white/20">
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Por período</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Por tipo de usuário</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Por plano</SidebarMenuSubButton></SidebarMenuSubItem>
-                                </SidebarMenuSub>
-                              </CollapsibleContent>
-                            </Collapsible>
-                          </SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/analytics/growth" className={subMenuButtonClass}>Crescimento</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/analytics/conversion" className={subMenuButtonClass}>Conversão</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/analytics/retention" className={subMenuButtonClass}>Retenção</SidebarMenuSubButton></SidebarMenuSubItem>
                         </SidebarMenuSub>
                       </CollapsibleContent>
                     </Collapsible>
                   </SidebarMenuItem>
 
-                  {/* Sistema */}
                   <SidebarMenuItem asChild>
                     <Collapsible>
                       <CollapsibleTrigger className="w-full">
@@ -408,43 +188,15 @@ export default function AdminSidebar() {
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <SidebarMenuSub className="border-l-white/20">
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Configurações gerais</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Categorias e tags</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Regras de negócio</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Limites de plano</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Feature flags</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem asChild>
-                            <Collapsible>
-                              <CollapsibleTrigger asChild>
-                                <SidebarMenuSubButton className={`${subMenuButtonClass} justify-between`}>
-                                  <span>Infraestrutura</span>
-                                  <ChevronRight className="h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-90" />
-                                </SidebarMenuSubButton>
-                              </CollapsibleTrigger>
-                              <CollapsibleContent>
-                                <SidebarMenuSub className="ml-4 border-l-white/20">
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Status de serviços</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Logs do sistema</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Auditoria</SidebarMenuSubButton></SidebarMenuSubItem>
-                                  <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Backups</SidebarMenuSubButton></SidebarMenuSubItem>
-                                </SidebarMenuSub>
-                              </CollapsibleContent>
-                            </Collapsible>
-                          </SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/system/categories" className={subMenuButtonClass}>Categorias</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/system/limits" className={subMenuButtonClass}>Limites</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/system/feature-flags" className={subMenuButtonClass}>Feature Flags</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/system/logs" className={subMenuButtonClass}>Logs</SidebarMenuSubButton></SidebarMenuSubItem>
                         </SidebarMenuSub>
                       </CollapsibleContent>
                     </Collapsible>
                   </SidebarMenuItem>
-
-                   {/* Integrações */}
-                   <SidebarMenuItem>
-                    <SidebarMenuButton href="/integrations" tooltip="Integrações" className={menuButtonClass}>
-                      <Puzzle />
-                      <span>Integrações</span>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
                   
-                  {/* Administradores */}
                   <SidebarMenuItem asChild>
                     <Collapsible>
                       <CollapsibleTrigger className="w-full">
@@ -456,88 +208,59 @@ export default function AdminSidebar() {
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <SidebarMenuSub className="border-l-white/20">
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Usuários admin</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Criar administrador</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Permissões</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Logs de acesso</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/admins/list" className={subMenuButtonClass}>Listar Admins</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/admins/roles" className={subMenuButtonClass}>Papéis</SidebarMenuSubButton></SidebarMenuSubItem>
                         </SidebarMenuSub>
                       </CollapsibleContent>
                     </Collapsible>
                   </SidebarMenuItem>
 
-                   {/* Suporte & Operações */}
                   <SidebarMenuItem asChild>
                     <Collapsible>
                       <CollapsibleTrigger className="w-full">
-                        <SidebarMenuButton tooltip="Suporte & Operações" className={menuButtonClass}>
+                        <SidebarMenuButton tooltip="Suporte" className={menuButtonClass}>
                           <HelpCircle />
-                          <span>Suporte & Operações</span>
+                          <span>Suporte</span>
                           <ChevronDown className="ml-auto h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-180" />
                         </SidebarMenuButton>
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <SidebarMenuSub className="border-l-white/20">
-                           <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Chamados abertos</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Histórico de suporte</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>SLA</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Contato interno</SidebarMenuSubButton></SidebarMenuSubItem>
+                           <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/support/tickets" className={subMenuButtonClass}>Tickets</SidebarMenuSubButton></SidebarMenuSubItem>
                         </SidebarMenuSub>
                       </CollapsibleContent>
                     </Collapsible>
                   </SidebarMenuItem>
 
-                  {/* Legal & Compliance */}
                   <SidebarMenuItem asChild>
                     <Collapsible>
                       <CollapsibleTrigger className="w-full">
-                        <SidebarMenuButton tooltip="Legal & Compliance" className={menuButtonClass}>
+                        <SidebarMenuButton tooltip="Legal" className={menuButtonClass}>
                           <Gavel />
-                          <span>Legal & Compliance</span>
+                          <span>Legal</span>
                           <ChevronDown className="ml-auto h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-180" />
                         </SidebarMenuButton>
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <SidebarMenuSub className="border-l-white/20">
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Termos de uso</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Política de privacidade</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>LGPD / GDPR</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Logs legais</SidebarMenuSubButton></SidebarMenuSubItem>
-                        </SidebarMenuSub>
-                      </CollapsibleContent>
-                    </Collapsible>
-                  </SidebarMenuItem>
-
-                   {/* Notificações do Sistema */}
-                  <SidebarMenuItem asChild>
-                    <Collapsible>
-                      <CollapsibleTrigger className="w-full">
-                        <SidebarMenuButton tooltip="Notificações do Sistema" className={menuButtonClass}>
-                          <Bell />
-                          <span>Notificações do Sistema</span>
-                          <ChevronDown className="ml-auto h-4 w-4 shrink-0 transition-transform data-[state=open]:rotate-180" />
-                        </SidebarMenuButton>
-                      </CollapsibleTrigger>
-                      <CollapsibleContent>
-                        <SidebarMenuSub className="border-l-white/20">
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Alertas críticos</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Incidentes</SidebarMenuSubButton></SidebarMenuSubItem>
-                          <SidebarMenuSubItem><SidebarMenuSubButton href="#" className={subMenuButtonClass}>Atualizações de sistema</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/legal/terms" className={subMenuButtonClass}>Termos de Uso</SidebarMenuSubButton></SidebarMenuSubItem>
+                          <SidebarMenuSubItem><SidebarMenuSubButton href="/admin/legal/privacy" className={subMenuButtonClass}>Política de Privacidade</SidebarMenuSubButton></SidebarMenuSubItem>
                         </SidebarMenuSub>
                       </CollapsibleContent>
                     </Collapsible>
                   </SidebarMenuItem>
                 </SidebarMenu>
             </SidebarContent>
-             <SidebarContent className="mt-auto p-2">
-                 <SidebarMenu>
-                    <SidebarMenuItem>
-                        <SidebarMenuButton href="/" tooltip="Sair" className="hover:bg-white/10 text-white/80 hover:text-white">
-                            <LogOut />
-                            <span>Sair</span>
-                        </SidebarMenuButton>
-                    </SidebarMenuItem>
-                 </SidebarMenu>
-             </SidebarContent>
+            <div className="mt-auto p-2">
+                <SidebarMenu>
+                <SidebarMenuItem>
+                    <SidebarMenuButton href="/" tooltip="Sair" className="hover:bg-white/10 text-white/80 hover:text-white">
+                        <LogOut />
+                        <span>Sair</span>
+                    </SidebarMenuButton>
+                </SidebarMenuItem>
+                </SidebarMenu>
+            </div>
         </Sidebar>
     );
 }

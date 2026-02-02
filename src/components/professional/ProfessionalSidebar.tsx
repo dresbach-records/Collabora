@@ -232,7 +232,7 @@ export default function ProfessionalSidebar() {
 
             </SidebarMenu>
         </SidebarContent>
-        <SidebarContent className="mt-auto p-2">
+        <div className="mt-auto p-2">
             <div className="md:hidden">
                 <SidebarSeparator />
                 <div className="p-2 space-y-2">
@@ -257,7 +257,7 @@ export default function ProfessionalSidebar() {
                     </SidebarMenuButton>
                 </SidebarMenuItem>
             </SidebarMenu>
-        </SidebarContent>
+        </div>
     </Sidebar>
   );
 }
