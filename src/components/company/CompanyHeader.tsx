@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Bell, HelpCircle, Lock, Zap } from "lucide-react";
+import { Search, Bell, HelpCircle, Lock, Zap, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -11,11 +11,14 @@ import { Badge } from "@/components/ui/badge";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { users } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import React from "react";
 
 const companyUser = users.find(u => u.role === 'COMPANY');
 const userAvatar = companyUser ? PlaceHolderImages.find(p => p.id === companyUser.avatarUrlId) : null;
 
 export default function CompanyHeader() {
+    const [searchValue, setSearchValue] = React.useState("");
+
     return (
         <header className="flex h-16 shrink-0 items-center gap-4 border-b bg-background px-4 sm:px-6">
           <div className="flex items-center gap-4">
@@ -28,12 +31,24 @@ export default function CompanyHeader() {
           
           <div className="relative hidden flex-1 justify-center md:flex">
             <div className="w-full max-w-lg">
-                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
-                type="search"
-                placeholder={"Buscar profissionais..."}
-                className="w-full rounded-lg bg-secondary pl-8"
+                  type="text"
+                  placeholder={"Buscar profissionais..."}
+                  className="w-full rounded-lg bg-secondary pl-8 pr-8"
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
                 />
+                {searchValue && (
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7 rounded-full"
+                        onClick={() => setSearchValue("")}
+                    >
+                        <X className="h-4 w-4 text-muted-foreground" />
+                    </Button>
+                )}
             </div>
           </div>
 
