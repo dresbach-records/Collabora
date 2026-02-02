@@ -7,10 +7,12 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { Input } from "@/components/ui/input";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Bell, HelpCircle, Rocket, Search } from "lucide-react";
+import { Bell, HelpCircle, LogOut, Rocket, Search, X } from "lucide-react";
+import React from "react";
 
 export default function AdminHeader() {
     const adminUserAvatar = PlaceHolderImages.find(p => p.id === 'testimonial-1');
+    const [searchValue, setSearchValue] = React.useState("");
 
     return (
         <header className="flex h-16 shrink-0 items-center justify-between gap-4 border-b bg-white px-4 sm:px-6">
@@ -24,12 +26,24 @@ export default function AdminHeader() {
           
             <div className="relative hidden flex-1 justify-center md:flex">
                 <div className="w-full max-w-lg">
-                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                    <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input
-                        type="search"
+                        type="text"
                         placeholder="Buscar usuários, empresas, projetos..."
-                        className="w-full rounded-lg bg-[#F3F4F6] pl-8 border-none"
+                        className="w-full rounded-lg bg-[#F3F4F6] pl-8 pr-8 border-none"
+                        value={searchValue}
+                        onChange={(e) => setSearchValue(e.target.value)}
                     />
+                    {searchValue && (
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7 rounded-full"
+                            onClick={() => setSearchValue("")}
+                        >
+                            <X className="h-4 w-4 text-muted-foreground" />
+                        </Button>
+                    )}
                 </div>
             </div>
 
@@ -57,7 +71,10 @@ export default function AdminHeader() {
                         <DropdownMenuItem>Configurações</DropdownMenuItem>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem asChild>
-                            <Link href="/">Sair</Link>
+                            <Link href="/">
+                                <LogOut />
+                                Sair
+                            </Link>
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>

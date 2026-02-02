@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Bell, HelpCircle, Lock, Zap, X } from "lucide-react";
+import { Search, Bell, HelpCircle, Lock, Zap, X, LogOut } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -89,7 +89,10 @@ export default function ProfessionalHeader() {
                     <DropdownMenuItem>Configurações</DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem asChild>
-                    <Link href="/">Sair</Link>
+                        <Link href="/">
+                            <LogOut />
+                            Sair
+                        </Link>
                     </DropdownMenuItem>
                 </DropdownMenuContent>
                 </DropdownMenu>

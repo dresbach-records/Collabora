@@ -17,7 +17,6 @@ import {
     Settings, 
     BarChart, 
     Shield, 
-    LogOut,
     FolderKanban,
     Package,
     CreditCard,
@@ -251,16 +250,6 @@ export default function AdminSidebar() {
                   </SidebarMenuItem>
                 </SidebarMenu>
             </SidebarContent>
-            <div className="mt-auto p-2">
-                <SidebarMenu>
-                <SidebarMenuItem>
-                    <SidebarMenuButton href="/" tooltip="Sair" className="hover:bg-white/10 text-white/80 hover:text-white">
-                        <LogOut />
-                        <span>Sair</span>
-                    </SidebarMenuButton>
-                </SidebarMenuItem>
-                </SidebarMenu>
-            </div>
         </Sidebar>
     );
 }

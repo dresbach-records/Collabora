@@ -23,7 +23,6 @@ import {
   CreditCard,
   ImageIcon,
   Puzzle,
-  LogOut,
   Lock,
   Zap,
   ChevronDown,
@@ -248,15 +247,6 @@ export default function ProfessionalSidebar() {
                     </Button>
                 </div>
             </div>
-            <SidebarSeparator />
-            <SidebarMenu>
-                <SidebarMenuItem>
-                    <SidebarMenuButton href="/" tooltip="Sair">
-                        <LogOut />
-                        <span>Sair</span>
-                    </SidebarMenuButton>
-                </SidebarMenuItem>
-            </SidebarMenu>
         </div>
     </Sidebar>
   );
